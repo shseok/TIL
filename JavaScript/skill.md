@@ -1,0 +1,3 @@
+- array clone - copy
+    - ex) let clone = arr.slice();
+    - ex) let clone = [...arr];

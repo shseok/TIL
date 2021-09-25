@@ -1,12 +1,11 @@
 ## Today I Learned (TIL)
 
 # JavaScript
- - 기초
-    <!-- - [ES6 문법]() -->
+ - [ES6](JavaScript\ES6.md)
 # Git
 
 # React
-
+ - [라이브러리](React\라이브러리.md)
 # CS
 
 # Algorithm
@@ -14,3 +13,5 @@
 # Database
 
 # ETC
+ - [MarkDown](ETC\MarkDown.md)
+ - [Tools](ETC\유용한-TooL.md)

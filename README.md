@@ -15,6 +15,7 @@
 # ETC
  - [MarkDown](./ETC/MarkDown.md)
  - [Tools](./ETC/유용한-TooL.md)
+ - [Math](./ETC/수학지식.md)
 
 # 일정
  - TOPCIT

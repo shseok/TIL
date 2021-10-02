@@ -10,3 +10,11 @@
             })()
 
             ```
+- input 값이 숫자 or 문자인지 판단
+    ```
+    if (typeof input !== 'number') {
+        console.log('string');
+    } else {
+        console.log('number');
+    }
+    ```

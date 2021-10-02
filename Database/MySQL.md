@@ -9,3 +9,6 @@
     - 정보를 넣고 빼는 각종 기능을 넣어 원하는 것을 기능별로 쓸 수 있는 하나의 소프트웨어이다.
     - 저장하는 방법 - SQL(structed Query Language)
     
+- https://www.yalco.kr/lectures/sql/
+- 문자열과 숫자를 연산할 경우 문자열은 0 취급
+    - 단, 숫자로 구성된 문자열은 숫자로 자동인식

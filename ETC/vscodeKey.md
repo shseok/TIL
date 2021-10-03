@@ -1,0 +1,34 @@
+# VS Code 자동완성, 단축키
+
+## <HTML, CSS>Emmet Abbreviation
+- div tag   
+    HTML 문서에서 '.class_name' 또는 '#ID_name' 작성 후 Enter     
+    div tag 로 둘러싸인 class 또는 ID를 하나 만들어준다.
+
+    >'.class_name(또는 #ID_name) * 숫자' : '숫자'에 해당하는 갯수만큼 div class, ID를 만들어준다.
+
+- Link   
+    link:link할 요소로 작성할 수 있다.
+    대표적으로 많이 사용하는 css stlyesheet의 경우, 'link:style' 이라고 입력하면 된다.
+
+- tag, class와 id를 쓰기
+    - "tag.class_name#ID_name" 이라고 작성하면 된다.
+    - ex) i.box#navi-box
+- class name을 여러 개 넣기
+    - "tag.class_name.class_name2" 라고 작성하면 된다.
+
+- parent와 child element를 동시에 만들기
+    - 사이에 ">"를 입력해주면 된다.
+    - ex) i.box#navi-box>.child-box#navi-controller
+
+- parent-child가 아닌 대등관계의 element를 추가로 만들기
+    - 사이에 "+"를 입력해주면 된다.
+    - ex) i.box#navi-box+.child-box#navi-controller
+## Cursor, Line Control
+- Cursor
+    - "Alt+Shift+화살표 방향키" 를 눌러 Multi-Cursor형태로 만들어줄 수 있다.
+- Line Control
+    - "Alt+화살표 방향키"를 눌러 Line Swap이 가능하다. 아래쪽에 있는 elements를 닫는 tag(ex.</div>) 쪽으로 올리면 해당 tag의 child element로 변경해줄 수 있다.
+- Multi-Select
+    - 떨어져있지만 똑같은 형태인 것 선택
+    - "Ctrl+D"를 통해 multi-select가 가능하다.

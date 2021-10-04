@@ -11,8 +11,12 @@
 - 프론트엔드 웹에서 서버에 데이터를 요청하거나 배달 앱에서 서버에 주문을 넣는 서비스들에서 오늘날 널리 사용되는 것
 - 각 요청이 어떤 동작이나 정보를 위한 것인지를 요청을 보면 추론 가능
 - URI
+    - Uniform Resource Identifier
     - 자원을 구조와 함께 나타내는 형태의 구분자
-    - 
+    - 인터넷에 있는 자료의 id
+    - URI 는 유일해야한다
+    - <img src="./URI_img.png" alt="kernel" width="500" height="250">
+    - URL 은 자원의 위치, URN 은 자원의 이름 을 의미
 - CRUD
     - CREATE : 정보 생성
     - READ : 정보 조회
@@ -32,5 +36,5 @@
 
 # Ref
 - https://www.yalco.kr/23_rest_api/
-- URI
-- 비동기 프로그래밍
+- https://programming119.tistory.com/194
+- [비동기 프로그래밍](./비동기프로그래밍.md)

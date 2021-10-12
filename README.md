@@ -20,5 +20,33 @@
 # 일정
  - TOPCIT
     - 21.10.30 09:30~12:00
- - 5G기반 미래 디지털 조선소 세미나 보고서
-    - 21.09.28 24:00
+
+# 건강검진
+   - 11월 1일 ~ 11월 30일
+# 수업피드백
+
+# 구글메일 확인 후 설문지
+
+# 인턴기간 확인
+- https://how.ajou.ac.kr/index.do
+
+# 시프 과제하기
+
+# MYSAQL 삭제
+
+- https://allhpy35.tistory.com/53
+
+# 타입스크립트
+- https://heropy.blog/2020/01/27/typescript/
+
+# JS 소괄호 의미
+
+- https://heecheolman.tistory.com/23
+
+
+# 채용관련
+
+- linkedIn
+   - https://heecheolman.tistory.com/23
+- 로켓펀치
+   - https://www.rocketpunch.com/companies/rocketpunch

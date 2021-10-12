@@ -6,6 +6,11 @@
 - Representing numbers
 
 - Endianness
+    - Most of modern architectures are little endian (x86)
+        - Make pointer type casting obvious
+    - Some architecture can switch between the endians
+    - MIPS is big endian
+
 - MIPS instruction의 종류와 instruction이 어떻게 binary code로 바뀌는지 살펴보자.
 사람과 컴퓨터는 소통해야 한다.
 소통하는 과정은 크게 3가지로 볼 수 있다.   

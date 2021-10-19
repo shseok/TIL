@@ -46,3 +46,54 @@ or
     - 5 + x
     - 5 + dd
     - 1000 + dd : 1000 Line이 없어도 가능한 최대한 지운다는 의미
+
+    위와 비슷
+        
+    |명령어|설명|
+    |------|---|
+    |i (insert) | 깜빡이는 커서 앞에서부터|
+    |a (append) | 깜빡이는 커서 뒤에서부터|
+    |I (first line insert)|
+    |A (Last line insert)|
+    |o | 깜빡이는 커서 기준 다음 줄로 내림 (한 줄 공백)|
+    |O | 깜빡이는 커서 기준 위 줄로 올림 (한 줄 공백)|
+    |x | (=delete)|
+    |dd | line delete|
+    |D | 한 줄 지우지만 line 유지|
+    |r | 한 글자를 바꾸고 빠져나옴|
+    |cw | 한 단어를 바꾸고 빠져나오진 못함|
+    |c$ | 커서 부터 해당 line의 끝까지 지우고 change가능|
+    |s | 한 글자 바꾸고 빠져나오지 않음|
+    |S | line 전체 다 바꾸고 빠져나오지 않음|
+    |cc | S와 같음|
+    |숫자 + 명령 + 원하는 단어|
+    |2 + o + (원하는 단어) escape | 원하는 단어 * 2줄|
+    |100 + i + (원하는 단어) enter + escape | 원하는 단어가 100줄 단위 복사|
+    |100 + i + (원하는 단어) escape | 원하는 단어 100개 enter없이 한 줄에복사|
+    |명령 + 숫자 + 원하는 단어|
+    |u | like "Ctrl + z"|
+    |Ctrl+r | like "Shift + Ctrl + z"|
+    |. | 이전 명령을 반복|
+    |/ (search) | 일치하는 내용을 찾음 +) 이 후 n을 누를 때 일치하는 다음 것으로 넘어감|
+    |y (copy) | 복사 Ctrl + c|
+    |yy | 한 줄 복사, 따라서 3 yy 하면 커서 포함 이후 세줄 복사|
+    |yw | 한 단어 복사, 따라서 2yw하면 커서포한 두 단어 복사|
+    |p | 커서 뒤에 Ctrl + v|
+    |P | 커서 앞에 Ctrl + v|
+    |dw | 한글자 삭제|
+    :w | 저장
+    :w! | 기존에 있는 파일에 저장
+    :cd | .vimrc가 있는 위치
+    :cd D:\vimSample (enter) -> :w newText.txt하면 원하는 위치에 저장 완료
+    :q! | 저장하지 않고 나가기
+    :e | 열기
+    ZZ | save and quit
+    ZQ | quit without saving
+    ------------------------------
+    visual mode (v enter) <- vi에서 불가능 
+
+    드래그 후 y -> p (복붙)
+    드래그 후 d(Ctrl x) -> p (삭제된것 붙여넣기) 
+
+    ~ : 대소문자 toggle
+    < : indentation , 드래그 후 해도 됨

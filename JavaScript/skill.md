@@ -41,3 +41,16 @@
 
 - 배열 내 객체 중복 id 값 제거
     - https://kyounghwan01.github.io/blog/JS/JSbasic/dupulication-property-remove/#lodash
+
+- 맵을 배열로 반환하는 방법
+    ```
+    let map = new Map();
+
+    map.set("name", "John");
+
+    Array.from(map.keys());
+    ```
+
+    - **Array.from**(이터러블 or 유사배열) 사용
+        - 이터러블 -> 문자열, 배열 등...
+    - 셋을 배열로 반환하는 방법에도 해당

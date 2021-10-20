@@ -20,10 +20,67 @@
     ```
 
 - 구조분해할당
-    ```
-        let [command, uid] = "Enter uid1234 Muzi".split(' ');
-    ```
-    앞에 2개만 차례로 할당되고 남은 Muzi는 할당되지 않는다.
+    - 앞에 2개만 차례로 할당되고 남은 Muzi는 할당되지 않는다.
+        ```
+            let [command, uid] = "Enter uid1234 Muzi".split(' ');
+        ```
+    - 우측에 이터러블(iterable)이면 뭐든 할당가능
+        ```
+            let [a, b, c] = "abc"; // ["a", "b", "c"]
+            let [one, two, three] = new Set([1, 2, 3]); // [1,2,3]
+        ```
+    - 변수 교환 트릭
+        ```
+            let guest = "Jane";
+            let admin = "Pete";
+
+            // 변수 guest엔 Pete, 변수 admin엔 Jane이 저장되도록 값을 교환함
+            [guest, admin] = [admin, guest]; // guest = "Pete", admin = "Jane"
+        ```
+    - 객체 분해
+        ```
+            let options = {
+            title: "Menu",
+            width: 100,
+            height: 200
+            };
+
+            let {title, width, height} = options; // title = "Menu", width = 100, height: 200 
+        ```
+        - let {...} 안의 순서가 바뀌어도 동일하게 동작한다👆
+        - let 없이 사용시 주의
+            ``` 
+                let title, width, height;
+
+                // SyntaxError: Unexpected token '='👇
+                {title, width, height} = {title: "Menu", width: 200, height: 100};
+
+            ```
+            자바스크립트가 코드 블록으로 인식
+            - 해결 방법 : 에러를 해결하려면 할당문을 괄호(...)로 감싸 자바스크립트가 {...}를 코드 블록이 아닌 표현식으로 해석하도록 한다
+                ```
+                    let title, width, height;
+
+                    // 에러 해결 👇
+                    ({title, width, height} = {title: "Menu", width: 200, height: 100});
+
+                    or another example
+
+                    let user = { name: "John", years: 30 };
+
+                    ({ name, years: age, isAdmin = false } = user); // name = "John" , age = "30", isAdmin = "false"
+                ```
+        - 함수 매개변수를 구조 분해할 땐, 반드시 인수가 전달된다고 가정되고 사용된다는 점 주의하자. 모든 인수에 기본값을 할당해 주려면 빈 객체({})를 명시적으로 전달해야 한다.
+        - 인수를 전달하지 않을 것이 예상될 경우 아래와 같이 대처를 해야한다
+            ```
+                function showMenu({ title = "Menu", width = 100, height = 200 } = {}) {
+                    alert( `${title} ${width} ${height}` );
+                }
+
+                showMenu(); // Menu 100 200
+                showMenu({title: "My menu", items: ["Item1", "Item2"]}); // My Menu 100 200
+            ```
+
 
 
 - 객체 배열에서 속성 값을 배열로 추출

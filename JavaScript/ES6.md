@@ -108,3 +108,7 @@
             Array.isArray({}); // false
             Array.isArray([]); // true
         ```
+
+    - new Date()
+        - Date 객체 중 연도를 반환해주는 메서드를 사용할 때, getFullYear()를 사용해야한다. (getYear() X )
+        - Date 객체엔 자동 고침(autocorrection) 이라는 유용한 기능이 존재 -> 윤년을 생각하기에 도움

@@ -111,3 +111,14 @@
     - **Array.from**(이터러블 or 유사배열) 사용
         - 이터러블 -> 문자열, 배열 등...
     - 셋을 배열로 반환하는 방법에도 해당
+
+- 코드의 시간차 측정
+    ```
+        let start = new Date(); // 측정 시작 | new Date() 보다 Date.now(); 를 쓰는게 성능에 좋음
+
+        // 원하는 작업을 수행 ...
+
+        let end = new Date(); // 측정 종료 | new Date() = Date.now();
+
+        console.log( `원하는 작업을 수행하는데 ${end - start} 밀리초가 걸린다` );
+    ```

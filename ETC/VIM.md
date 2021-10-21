@@ -7,6 +7,7 @@ Text Editor - vi compatible
 <img src="./img/VIM2_img.png" alt="kernel" width="800" height="500">
 https://www.raddit.com/r/linux4noobs/comments/awjzuo/vim_cheat_sheet/
 
+- :set number -번호표시
  - ⬅(R) : H
  - ➡(L) : L
  - ⬆(T) : K

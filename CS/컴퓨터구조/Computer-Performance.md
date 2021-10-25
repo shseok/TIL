@@ -82,6 +82,7 @@ Measuring Execution Time
 CPU Clocking
 - Operation of digital hardware governed by a constant-rate clock
 - Clock period: duration of a **clock cycle**
+    - e.g., 250ps = 0.25ns = 250×10–12s
 - Clock frequency (**Clock rate**): cycles per second
     - e.g., 4.0GHz = 4000MHz = 4.0×109Hz (4.0GHz) = 4.0GHz/s
 
@@ -103,7 +104,7 @@ CPU Time
 Instruction Count(IC) and CPI
 
 - Clock Cycle Time = 1 / Clock Rate
-- Cycles per Instruction n = CPI x Clock Cycle Time
+- Cycles per Instruction = CPI x Clock Cycle Time
         
     <img src="../img/CPI.png" alt="cpuTime" width="400" height="100">
 

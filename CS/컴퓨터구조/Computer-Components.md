@@ -69,4 +69,4 @@
         - Textual representation of instructions
     - Hardware representation
         - Binary digits (bits)
-    - Encoded instructions and data
+        - Encoded instructions and data

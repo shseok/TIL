@@ -23,7 +23,8 @@
  - [JSON](./ETC/JSON.md)
  - [VIM](./ETC/VIM.md)
  - [인코딩](./ETC/인코딩.md)
- - [컴푸터처리속도와크기](./ETC/처리속도및사이즈.md)
+ - [컴퓨터처리속도와크기](./ETC/처리속도및사이즈.md)
+ - [REST-API](./ETC/REST-API.md)
 
 # 일정
  - TOPCIT

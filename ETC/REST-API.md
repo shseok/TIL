@@ -15,7 +15,7 @@
     - 자원을 구조와 함께 나타내는 형태의 구분자
     - 인터넷에 있는 자료의 id
     - URI 는 유일해야한다
-    - <img src="./URI_img.png" alt="kernel" width="600" height="400">
+    - <img src="./img/URI_img.png" alt="kernel" width="600" height="400">
     - URL 은 자원의 위치, URN 은 자원의 이름 을 의미
 - CRUD
     - CREATE : 정보 생성

@@ -1,6 +1,6 @@
-# 컴퓨터구조
+# 컴퓨터구조(Eng)
 
-## Idex
+## Index
 
 0. [Computer Components](./Computer-Components.md)
 1. [Computer Performance](./Computer-Performance.md)
@@ -12,5 +12,16 @@
 8. [Addressing](./Addressing.md)
 
 
-## Problem
+## Quiz
 [problem1](./problem.md)
+
+**by Paul Rajib (Ajou Univ.)**
+
+# 컴퓨터구조(KOR)
+
+## Index
+
+1. [Overview of MIPS ISA](./Overview-of-MIPS-ISA.md)
+2. [Representing instructions](./Representing-instructions)
+
+**by 안정섭 교수님 (Ajou Univ.)**

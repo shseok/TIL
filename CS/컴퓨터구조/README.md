@@ -15,6 +15,9 @@
 ## Quiz
 [problem1](./problem.md)
 
+## assignment requirements
+[C언어과제참고](./C언어과제참고.md)
+
 **by Paul Rajib (Ajou Univ.)**
 
 # 컴퓨터구조(KOR)
@@ -23,5 +26,6 @@
 
 1. [Overview of MIPS ISA](./Overview-of-MIPS-ISA.md)
 2. [Representing instructions](./Representing-instructions)
+3. [Procedure](./Procedure_kor.md)
 
 **by 안정섭 교수님 (Ajou Univ.)**

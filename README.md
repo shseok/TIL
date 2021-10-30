@@ -56,3 +56,4 @@
    - https://heecheolman.tistory.com/23
 - 로켓펀치
    - https://www.rocketpunch.com/companies/rocketpunch
+- 아주대 일자리센터 -> 잡코리아

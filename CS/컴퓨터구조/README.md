@@ -27,5 +27,6 @@
 1. [Overview of MIPS ISA](./Overview-of-MIPS-ISA.md)
 2. [Representing instructions](./Representing-instructions)
 3. [Procedure](./Procedure_kor.md)
+4. [Addressing](./Addressing_kor.md)
 
 **by 안정섭 교수님 (Ajou Univ.)**

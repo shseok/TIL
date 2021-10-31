@@ -83,3 +83,7 @@
 - Practice
     - [SQL Prac](https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_all)
     - https://www.yalco.kr/lectures/sql/
+
+
+# MYSQL 삭제 가이드
+- https://allhpy35.tistory.com/53

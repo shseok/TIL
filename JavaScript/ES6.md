@@ -38,6 +38,58 @@ typeof 연산자는 값의 자료형을 반환해준다. 그런데 두 가지 �
 typeof null == "object" // 언어 자체의 오류
 typeof function(){} == "function" // 함수는 특별하게 취급
 ```
+# 객체
+- 중괄호 {…}를 이용해 만들 수 있다.
+- 중괄호 안에는 ‘키(key): 값(value)’ 쌍으로 구성된 프로퍼티(property) 를 여러 개 넣을 수 있는데, 키엔 문자형, 값엔 모든 자료형이 허용된다.
+    ```
+        let user = new Object(); // '객체 생성자' 문법
+        let user = {};  // '객체 리터럴' 문법 <- 선언시 주로 사용된다
+    ```
+- delete 연산자를 사용하면 프로퍼티를 삭제가능
+    ```
+        delete user.age;
+    ```
+- const로 선언된 객체는 수정될 수 있다.
+- 문자형이나 심볼형에 속하지 않은 값은 문자열로 자동 형 변환된다.
+    - 키에 숫자 0을 넣으면 문자열 "0"으로 자동변환된다.
+## 계산된 프로퍼티
+객체를 만들 때 객체 리터럴 안의 프로퍼티 키가 대괄호로 둘러싸여 있는 경우
+
+## 단축 프로퍼티
+프로퍼티 값을 기존 변수에서 받아와 사용하는 경우👇
+```
+function makeUser(name, age) {
+    return {
+        name: name,
+        age: age,
+        // ...등등
+    };
+}
+
+let user = makeUser("John", 30);
+console.log(user.name); // John
+```
+단축 프로퍼티를 이용하여 코드를 짧게 줄일 수 있다.👇
+```
+function makeUser(name, age) {
+  return {
+    name, // name: name 과 같음
+    age,  // age: age 와 같음
+    // ...
+  };
+}
+```
+## ‘in’ 연산자로 프로퍼티 존재 여부 확인
+자바스크립트 객체는 존재하지 않는 프로퍼티에 접근하려 해도 에러가 발생하지 않고 undefined를 반환한다
+```
+let user = {};
+
+console.log( user.noSuchProperty === undefined ); // true -> 프로퍼티 존재 x
+```
+연산자 in을 사용하면 프로퍼티 존재 여부를 확인👇
+
+
+
 # 문자열       
 -  UTF-16을 사용해 문자열을 인코딩
 
@@ -330,3 +382,6 @@ typeof function(){} == "function" // 함수는 특별하게 취급
 - 정의: 외부 변수를 기억하고 이 외부 변수에 접근할 수 있는 함수를 의미한다
 - 자바스크립트에선 모든 함수가 자연스럽게 클로저가 된다
     - 왜?: 자바스크립트의 함수는 숨김 프로퍼티인 [[Environment]]를 이용해 자신이 어디서 만들어졌는지를 기억한다. 함수 본문에선 [[Environment]]를 사용해 외부 변수에 접근한다
+
+# JS 소괄호 의미
+- https://heecheolman.tistory.com/23

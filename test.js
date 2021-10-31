@@ -1,9 +1,14 @@
-fib = (num) => {
-    if (num < 2) {
-        return 1;
-    }
-    return fib(num - 1) + fib(num - 2);
-}
 
-console.log(fib(3));
-console.log(fib(7));
+
+// function makeCounter() {
+//     let count = 0;
+//     console.log(count);
+
+//     return () => count++;
+// }
+
+// let counter = makeCounter();
+
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());

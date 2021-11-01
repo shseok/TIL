@@ -23,10 +23,12 @@
 - [라이브러리](./React/라이브러리.md)
    - Update Later
 # CS
-- [기초](./CS/종류.md)
-- [리눅스](./CS/리눅스.md)
+- [기초](./CS/basic.md)
+- [리눅스](./CS/Linux.md)
 - [컴퓨터구조](./CS/컴퓨터구조/README.md)
 - [SW-Testing](./CS/SW-Testing.md)
+- [OS](./CS/시스템프로그래밍/OperatingSystems.md)
+- [시스템프로그래밍](./CS/시스템프로그래밍/README.md)
 # Algorithm
 - [Recursive](./Algorithm/재귀.md)
    - Update Later
@@ -43,7 +45,7 @@
 - [컴퓨터처리속도와크기](./ETC/처리속도및사이즈.md)
 - [REST-API](./ETC/REST-API.md)
 - [비동기프로그래밍](./ETC/비동기프로그래밍.md)
-- Update Later
+   - Update Later
 
 # 일정
 - TOPCIT

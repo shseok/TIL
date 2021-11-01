@@ -1,1 +1,0 @@
-[SIC/XE Instruction Set](https://www.unf.edu/~cwinton/html/cop3601/supplements/test.html)

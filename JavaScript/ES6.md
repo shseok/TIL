@@ -181,6 +181,106 @@ let user = {
 
 let clone = Object.assign({}, user);
 ```
+
+## 메서드
+객체는 사용자(user), 주문(order) 등과 같이 실제 존재하는 개체(entity)를 표현하고자 할 때 생성된다. 객체의 프로퍼티에 함수를 할당해 객체에게 행동할 수 있는 능력을 부여한다. 이렇게 객체 프로퍼티에 할당된 함수를 **메서드**라고 한다.
+
+### 메서드 단축 구문
+- 객체 리터럴 안에 메서드를 선언할 때 사용할 수 있는 단축 문법
+- function을 생략해도 메서드를 정의할 수 있다.
+```
+    user = {
+        sayHi: function() {
+            console.log("Hello");
+        }
+    };
+
+    // 단축 구문 👇
+    user = {
+        sayHi() { // "sayHi: function()"과 동일
+            console.log("Hello");
+        }
+    };
+```
+
+## this
+- 모든 메서드가 그런 건 아니지만, 대부분의 메서드가 객체 프로퍼티의 값을 활용한다.
+메서드 내부에서 this 키워드를 사용하면 객체에 접근할 수 있고 객체 프롶티 값을 활용할 수 있다.
+이때 '점 앞'의 this는 객체를 나타내며, 정확히는 메서드를 호출할 때 사용된 객체를 나타낸다.
+```
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // 'this' -> '현재 객체 user'
+    console.log(this.name);
+  }
+
+};
+user.sayHi(); // John
+```
+- 자바스크립트에선 모든 함수에 this를 사용할 수 있다. **this 값은 런타임에 결정**된다. 컨텍스트에 따라 달라진다. 동일한 함수라도 다른 객체에서 호출했다면 'this'가 참조하는 값이 달라진다. 함수 본문에 this가 사용되었다면, 객체 컨텍스트 내에서 함수를 호출할 것이라고 예상하자
+```
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  console.log( this.name );
+}
+
+// 별개의 객체에서 동일한 함수를 사용함
+user.f = sayHi;
+admin.f = sayHi;
+
+// 'this'는 '점(.) 앞의' 객체를 참조하기 때문에 this 값이 달라짐
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); // Admin (점과 대괄호는 동일하게 동작함)
+```
+- 화살표 함수는 일반 함수와는 달리 '고유한' this를 가지지 않는다. 화살표 함수에서 this를 참조하면, 화살표 함수가 아닌 ‘평범한’ 외부 함수에서 this 값을 가져온다. 별개의 this가 만들어지는 건 원하지 않고, 외부 컨텍스트에 있는 this를 이용하고 싶은 경우 화살표 함수가 유용
+
+- 계산기 만들기
+```
+let calculator = {
+    read(a, b) {
+        this.a = a; // a를 받으면 object에 a가 생성 됨! 헷갈리면(?) a:0, b:0 을 임의로 선언해줘도 됨
+        this.b = b;
+    },
+    sum() {
+        return this.a + this.b;
+    },
+    mul() {
+        return this.a * this.b;
+    }
+};
+
+calculator.read(1, 2);
+console.log(calculator.sum());
+console.log(calculator.mul());
+```
+- 체이닝
+    - 메서드를 호출할 때마다 객체 자신을 반환한다
+```
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    console.log( this.step );
+    return this;
+  }
+}
+
+ladder.up().up().down().up().down().showStep(); // 1
+```
 # 문자열       
 -  UTF-16을 사용해 문자열을 인코딩
 
@@ -471,6 +571,19 @@ let clone = Object.assign({}, user);
     ```
 - 화살표 함수는 함수 표현식과 같은 방법으로 사용할 수 있다.
 
+- 화살표 함수는 일반 함수와는 달리 '고유한' this를 가지지 않는다. 화살표 함수에서 this를 참조하면, 화살표 함수가 아닌 ‘평범한’ 외부 함수에서 this 값을 가져온다. 별개의 this가 만들어지는 건 원하지 않고, 외부 컨텍스트에 있는 this를 이용하고 싶은 경우 화살표 함수가 유용
+
+```
+let user = {
+  firstName: "보라",
+  sayHi() {
+    let arrow = () => console.log(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // 보라
+```
 # 클로저
 - 정의: 외부 변수를 기억하고 이 외부 변수에 접근할 수 있는 함수를 의미한다
 - 자바스크립트에선 모든 함수가 자연스럽게 클로저가 된다

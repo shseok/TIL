@@ -71,29 +71,35 @@ https://github.com/tensorflow/tensorflow/blob/master/LICENSE
 - BSD 라이선스는 미국 정부의 재원으로 운영되는 경우가 많음 
 - 공공의 이익을 위해 지정된 License 
 - **다른 라이선스로 변경하여 상용으로 판매 가능**
+    - ex) BSD 라이센스인 유닉스를 만들어서 맥os를 팔 수 있음
+- 제약이 있을 수도 있지만, 없을 수도 있다.
+    - 없을 경우 MIT
 
 ### 2. Apache 2.0 
 - Apache Software Foundation 에서 만든 License 
-- **Apache 라는 상표권 침해하지 않아야 한다.**
+- BSD와 비슷
+- 단, **Apache 라는 상표권 침해하지 않아야 한다.**
 - 특허 부분은 GPL 3.0 과 결합하여 GPL 3.0 으로 배포 가능 
-- 수정 프로그램의 Source Code 공개 의무 없음     
+- **수정 프로그램의 Source Code 공개 의무 없음.**   
 - 예) apache, tomcat …  
 
 ### 3. GPL 2.0 License ( General Public License 2.0 )
+- ex) Linux
 - 1989년 1차,  1991년 2차 , 2007년 3차 버전 발표
 - 영문판 GPL 2.0 문서 포함 배포 
-- Source Code 수정시 수정 사실, 내용 및 그 날짜 등을 파일 안에 명시
-- 수정하거나 새로운 Source Code 에 Link 시키는 경우 Source Code 를 GPL 로 공개
+- Source Code **수정시 수정 사실, 내용 및 그 날짜 등을 파일 안에 명시**
+- 수정하거나 새로운 Source Code 에 **Link** 시키는 경우 Source Code 를 GPL 로 공개
+    - 사용한 소프트웨어는 모두 공개
 - Object Code 혹은 Running 모듈로 배포 시 Source Code 포함하거나 제공받을 방법 명시 
-- 특허가 적용된 경우 GPL 조건에 충족한 사용자의 경우 특허료 받을 수 없음. 특허료를  만약 받고자 하다면 GPL 로 배포할 수 없음.
+- 특허가 적용된 경우 GPL 조건에 충족한 사용자의 경우 **특허료 받을 수 없음**. 특허료를  만약 받고자 하다면 GPL 로 배포할 수 없음.
 
 ### 4. GPL 3.0 
 - 2007년 6월 29일 공표 
 - GPL 2.0 과 유사 
 - 설치에 필요한 모든 정보 제공 : 설치 방법, 절차, 인증 키 등등
 - DRM 과 관련해서는 각국의 법률에 의해 보호되는 이익을 포기해야 함
-- 특허를 개선하여 배포한 경우 자신이 기여한 부분에 대해 비차별적이고 무료라는 라이선스 제공 필수
-- 특허와 관련 되서 특허 소송을 제기한 경우 그 날부터 해당 제품의 GPL 은 종료 ( ? )
+- 특허를 개선하여 **배포**한 경우 자신이 기여한 부분에 대해 비차별적이고 무료라는 라이선스 제공 필수
+- 특허와 관련 되서 특허 소송을 제기한 경우 그 날부터 해당 제품의 GPL 은 종료 ( ? ) 
 - Apache License 2.0 및 Affero GPL 3.0 과 **양립 가능** 
 
 ### 5. LGPL 2.1 License ( Lesser GPL , formerly Library GLP) 
@@ -101,8 +107,8 @@ https://github.com/tensorflow/tensorflow/blob/master/LICENSE
 - 상용 SW 를 만들고 있는 경우 강력한 GPL 은 사용하기 꺼린다.
 - 추가 작성된 원 Source code 공개 없이 사용된 GPL Source Code 만 공개하도록 제한
 - LPGL 적용을 명시해 배포 
-- LGPL 라이브러리 수정한 경우 수정한 라이브러리의 Source code 공개
-- LPGL 라이브러이에 응용 프로그램 Link 한 경우 응용 프로그램은 비공개 가능. 다만, Static Link 로 LGPL 라이브러리 사용시 Object Code 공개
+- LGPL 라이브러리 **수정한 경우 수정한 라이브러리의 Source code 공개**
+- LPGL 라이브러리에 응용 프로그램 **Link 한 경우 응용 프로그램은 비공개 가능**. 다만, Static Link 로 LGPL 라이브러리 사용시 Object Code 공개
 - 특허는 GPL 과 동일   
 - 예) WildFly 등    
 

@@ -29,6 +29,8 @@
 - [SW-Testing](./CS/SW-Testing.md)
 - [OS](./CS/시스템프로그래밍/OperatingSystems.md)
 - [시스템프로그래밍](./CS/시스템프로그래밍/README.md)
+- [지식재산권](./CS/오픈소스SW/IPR.md)
+- [IPR vs FOSS](./CS/오픈소스SW/IPRvsFOSS.md)
 # Algorithm
 - [Recursive](./Algorithm/재귀.md)
    - Update Later

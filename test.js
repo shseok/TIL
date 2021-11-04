@@ -1,37 +1,21 @@
-// // 중첩함수
+function makeArmy() {
+    let shooters = [];
 
-// function makeCounter() {
-//     let count = 0;
-//     console.log(count);
-
-//     return () => count++;
-// }
-
-// let counter = makeCounter();
-
-// console.log(counter());
-// console.log(counter());
-// console.log(counter());
-
-let ladder = {
-    step: 0,
-    up() {
-        this.step++;
-        return this;
-    },
-    down() {
-        this.step--;
-        return this;
-    },
-    showStep: function () { // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
-        console.log(this.step);
+    for (let i = 0; i < 10; i++) {
+        let shooter = function () { // shooter 함수
+            console.log(i); // 몇 번째 shooter인지 출력해줘야 함
+        };
+        shooters.push(shooter);
     }
-};
 
-ladder.up();
-ladder.up();
-ladder.down();
-ladder.showStep(); // 1
+    // console.log(shooters);
+    return shooters;
+}
 
-ladder.up().up().down().showStep(); // 1
+let army = makeArmy();
 
+// console.log(army[0]);
+
+army[0](); // 0번째 shooter가 10을 출력함
+army[5](); // 5번째 shooter 역시 10을 출력함
+// 모든 shooter가 자신의 번호 대신 10을 출력하고 있음

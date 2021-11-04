@@ -3,6 +3,7 @@
 # JavaScript
 - [ES6](./JavaScript/ES6.md)
 - [JS 기술](./JavaScript/skill.md)
+- [JSON](./JavaScript/JSON.md)
 - [RegExpression](./JavaScript/RegExp.md)
    - Update Later
 # TypeScript
@@ -41,7 +42,6 @@
 - [MarkDown](./ETC/MarkDown.md)
 - [Tools](./ETC/유용한-TooL.md)
 - [Math](./ETC/수학지식.md)
-- [JSON](./ETC/JSON.md)
 - [VIM](./ETC/VIM.md)
 - [인코딩](./ETC/인코딩.md)
 - [컴퓨터처리속도와크기](./ETC/처리속도및사이즈.md)

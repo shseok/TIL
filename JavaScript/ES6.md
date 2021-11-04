@@ -281,6 +281,49 @@ let ladder = {
 
 ladder.up().up().down().up().down().showStep(); // 1
 ```
+
+## new 연산자와 생성자 함수
+'new' 연산자와 생성자 함수를 사용하면 유사한 객체 여러 개를 쉽게 만들 수 있다.
+- 함수 이름의 첫 글자는 대문자로 시작
+- 반드시 'new' 연산자를 붙여 실행
+
+다음과 같은 알고리즘으로 동작
+1. 빈 객체를 만들어 this에 할당합니다.
+2. 함수 본문을 실행합니다. this에 새로운 프로퍼티를 추가해 this를 수정합니다.
+3. this를 반환합니다.
+
+```
+function User(name) {
+  // this = {};  (빈 객체가 암시적으로 만들어짐)
+
+  // 새로운 프로퍼티를 this에 추가함
+  this.name = name;
+  this.isAdmin = false;
+
+  // return this;  (this가 암시적으로 반환됨)
+}
+```
+- 생성자 함수엔 보통 return 문이 없다. 반환해야 할 것들은 모두 this에 저장되고, this는 자동으로 반환되기 때문에 반환문을 명시적으로 써 줄 필요가 없다.
+- class 문법을 사용하면 생성자 함수를 사용하는 것과 마찬가지로 복잡한 객체를 만들 수 있다.
+
+## 옵셔널 체이닝 '?.'
+옵셔널 체이닝(optional chaining) ?.을 사용하면 프로퍼티가 없는 **중첩 객체**를 에러 없이 안전하게 접근할 수 있기때문에 유용하다.
+```
+let user = {}; // 주소 정보가 없는 사용자
+
+console.log( user && user.address && user.address.street ); // undefined 
+👇(같다)
+console.log( user?.address?.street ); // undefined 
+
+```
+- ?.은 ?.'앞’의 평가 대상이 undefined나 null이면 평가를 멈추고 undefined를 반환한다
+- ?.은 읽기나 삭제하기에는 사용할 수 있지만 쓰기에는 사용할 수 없다
+
+즉,
+- obj?.prop – obj가 존재하면 obj.prop을 반환하고, 그렇지 않으면 undefined를 반환함
+- obj?.[prop] – obj가 존재하면 obj[prop]을 반환하고, 그렇지 않으면 undefined를 반환함
+- obj?.method() – obj가 존재하면 obj.method()를 호출하고, 그렇지 않으면 undefined를 반환함
+
 # 문자열       
 -  UTF-16을 사용해 문자열을 인코딩
 
@@ -383,9 +426,9 @@ ladder.up().up().down().up().down().showStep(); // 1
         - 평범한 값과 혼합해 사용하는 것도 가능
         - 배열을 합칠 때 전개 문법을 활용
         - 문자열을 문자 배열로 변환할때 활용
-        - 전개문법 vs Array.from
+        - [전개문법] vs Array.from
             - Array.from은 유사 배열 객체와 이터러블 객체 둘 다에 사용할 수 있다. 
-            - 전개 문법은 이터러블 객체에만 사용할 수 있다.
+            - 전개 문법(ex. [...variable])은 이터러블 객체에만 사용할 수 있다.
             - 무언가를 배열로 바꿀 때는 전개 문법보다 Array.from이 보편적으로 사용
         - **Object.assign() 처럼 깊은 복사가 가능하다!**
     - 나머지 매개변수 (...)
@@ -551,7 +594,7 @@ ladder.up().up().down().up().down().showStep(); // 1
 
     /* 위 화살표 함수는 아래 함수의 축약 version
 
-    let sum = function(a, b) {
+    let sum = function(a, b) { // 함수 표현식 + 익명 함수
         return a + b;
     };
     */

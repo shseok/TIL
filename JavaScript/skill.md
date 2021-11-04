@@ -1,8 +1,29 @@
 - array clone - copy
     - ex) let clone = arr.slice();
     - ex) let clone = [...arr];
+# 배열 메서드(map, filter, forEach ...)의 매개변수(func) 호출 방법
+- 1. arrow function이 아닌 함수 선언문을 이용할 경우 예시
+    ```
+        function isBigEnough(value) {
+            return value >= 10;
+        }
 
-- Immediately-invoked function expression(즉시 실행 함수)
+        let filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+        // filtered 는 [12, 130, 44]
+    ```
+- 2. a 이상 b 이하 함수를 선언하고 filter에 넘겨 주는 예시
+    ```
+        function inBetween(a, b) {
+            return function(x) {
+                return x >= a && x <= b;
+            };
+        }
+
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+        alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+    ```
+
+# Immediately-invoked function expression(즉시 실행 함수)
     - 즉시 실행 함수의 기본 형태는 아래와 같습니다.
         - ```
             (function () {
@@ -10,7 +31,7 @@
             })()
 
             ```
-- input 값이 숫자 or 문자인지 판단
+# input 값이 숫자 or 문자인지 판단
     ```
     if (typeof input !== 'number') {
         console.log('string');
@@ -164,4 +185,5 @@ Array.from(map.keys());
         showCount(null); // unknown
         showCount(); // unknown
     ```
-    - 0처럼 falsy로 평가되는 값들을 일반 값처럼 처리할 수 있어서 좋다       
+    - 0처럼 falsy로 평가되는 값들을 일반 값처럼 처리할 수 있어서 좋다
+

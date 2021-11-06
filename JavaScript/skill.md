@@ -24,13 +24,16 @@
     ```
 
 # Immediately-invoked function expression(즉시 실행 함수)
-    - 즉시 실행 함수의 기본 형태는 아래와 같습니다.
+    - 즉시 실행 함수의 기본 형태는 아래와 같다.
         - ```
             (function () {
                 // statements
             })()
 
             ```
+    - 함수를 감싸주면 표현식으로 인식하도록 속이고 ()를 붙여주면 표현식이 실행되게 해주는 원리이다
+    - 현대에는 사용하지 않는다.
+
 # input 값이 숫자 or 문자인지 판단
     ```
     if (typeof input !== 'number') {

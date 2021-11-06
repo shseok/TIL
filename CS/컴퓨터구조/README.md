@@ -29,5 +29,6 @@
 3. [Procedure](./Procedure_kor.md)
 4. [Addressing](./Addressing_kor.md)
 5. [Translating and starting a program](./Translating-starting-program.md)
+6. [Arithmetic for Computers](./ArithmeticComputer.md)
 
 **by 안정섭 교수님 (Ajou Univ.)**

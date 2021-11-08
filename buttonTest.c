@@ -137,10 +137,10 @@ static int GPIOWrite(int pin, int value) // 같음
 
 int main(int argc, char *argv[])
 {
-    int repeat = 100;
-    int state = 1;
+    int repeat = 100; // 100번 버튼(10초) check loop <- 버튼 꾹누르면 계속 0
+    int state = 100;  // toggle을 위한 state
     int prev_state = 1;
-    int light = 0;
+    int light = 1;
 
     if (-1 == GPIOExport(POUT2) || -1 == GPIOExport(PIN))
         return (1);
@@ -162,20 +162,19 @@ int main(int argc, char *argv[])
         if (-1 == GPIOWrite(POUT2, 1))
             return (3);
 
-        if (GPIORead(PIN) == 0) // 눌렀을 때
+        if (GPIORead(PIN) == 0) // press
         {
-            if (-1 == GPIOWrite(POUT, 1)) // 불킴
+            if (-1 == GPIOWrite(POUT, light)) // turn on and off
             {
                 return 3;
             }
-            usleep(1000);
+            // usleep(300 * 1000); // 0.3s because of usleep func -> micro
+            light = state % 2;
+            state--;
         }
-        printf("GPIORead : %d from pin %d\n", GPIORead(PIN), PIN);
-        if (-1 == GPIOWrite(POUT, 0)) // 불끔
-        {
-            return 3;
-        }
-        usleep(100000); // writeTest에 테스트한 결과, 시간이 느려짐을 알 수 있음. 근데 왜 쉴틈없이 반복되지? (buttonTest에서..)
+
+        printf("GPIORead : %d from pin %d\n", GPIORead(PIN), PIN); // read whether press or not press
+        usleep(100000);                                            // writeTest에 테스트한 결과, 시간이 느려짐을 알 수 있음.
     } while (repeat--);
 
     if (-1 == GPIOUnexport(POUT2) || -1 == GPIOUnexport(PIN))
@@ -186,26 +185,3 @@ int main(int argc, char *argv[])
     }
     return (0);
 }
-
-// 1. 아래의 POUT도 처리해줘야하지 않나?
-// if (-1 == GPIOExport(POUT))
-// {
-//     return 1;
-// }
-// if (-1 == GPIODirection(POUT, OUT))
-// {
-//     return 2;
-// }
-// do
-// {
-//     if (-1 == GPIOWrite(POUT, repeat % 2))
-//     {
-//         return 3;
-//     }
-//     usleep(5000 * 1000);
-// } while (repeat--);
-
-// if (-1 == GPIOUnexport(POUT))
-// {
-//     return 4;
-// }

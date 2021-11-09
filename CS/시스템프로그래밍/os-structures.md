@@ -87,3 +87,70 @@
     - Cons: Performance overhead of user space to kernel space communication
 
 ### Modules
+- 런타임에 로딩가능한 커널 모듈들을 제공한다 -> 컴퓨터 부팅할 때, 커널레이어에 핵심이 로딩됨. 나머지 커널 기능들은 secondary storage에 모듈 형태로 저장 됨. OS가 돌 때, 필요하면 가져다 쓸 수 있음
+
+- Uses object-oriented approach
+
+- 커널 레이어의 코드를 수정하지 않고 새로운 모듈을 추가함으로써 OS기능을 확장할 수 있다.
+
+- 각 모듈은 정해진 인터페이스로 상호작용할 수 있다.
+
+- Layered Approach와 차이점
+    - Layered Approach : 자신의 위아래만 인터렉트 가능
+    - Modules : 어떠한 모듈이든 인터렉트 가능(more flexible)
+
+- MicroKernel과 차이점
+    - 마이크로커널은 별도의 유저 프로세스로 작동해서 IPC오버헤드가 있지만, 모듈은 IPC 오버헤드가 없음
+
+### Hybrid Systems
+- 대부분의 OS들은 하나의 구조가 아닌 여러 구조의 이점들을 취하기위해 다자인 되어 있다.
+    - ex) 리눅스는 모놀리딕(성능)인 동시에 모듈러디자인(확장성) 구조이다
+
+
+## Linux Overview
+
+### Why Linux?
+- 대부분의 디바이스들은 리눅스 OS에 기반되어 있다.
+- 리눅스 환경에서 어플리케이션을 개발하고 테스트하는 능력을 기를 수 있다.
+
+### Why Linux Kernel?
+- 리눅스 커널 아래에 있는 여러 메커니즘의 동작 과정을 이해하고 수정할 수 있는 능력을 배우기 위해
+- ...
+
+### The Linux System
+- GNU Project로 개발된 툴을 사용
+- **File System Hierarchy Standard** document
+
+### 리눅스 디자인 원칙
+- UNIX semantics를 고수한다
+- 속도, 효율성, 표준
+- Linux is designed to be compliant with the relevant **POSIX** documents
+    - 표준 -> compatibility향상
+
+### Components of the Linux System
+- 리눅스 OS 구조는 크게 3가지
+    - 커널
+        - abstraction을 유지하는데 책임 : 하드웨어의 디테일을 숨기고 편하게 인터페이스를 제공하여 도와줌
+    - 시스템 라이브러리
+        - 어플리케이션을 사용하기 위한 API같은 것
+    - 시스템 유틸리티
+        - 시스템 프로그램이다.
+        - 유저 레이어에서 써드파티가 만든 유저 어플리케이션이 돌 수 도 있지만, os에서 만든 시스템 어플리케이션이 돌 수도 있다.
+        - 커널레이어를 돕기도 한다.
+        - ex) 제어판
+
+### Kernel Modules
+- 커널 functionality를 위한 코드 블럭
+    - 커널의 다른 파트와 상관없이 컴파일, 로드 등 독립적으로 실행.
+- 커널 모듈은 독립적이기 때문에 GPL라이센스를 따르지 않고 영리활동을 할 수 있어서 사용된다.
+
+### Linux System Architecture
+
+<img src="../img/linuxSystemArchi.png" alt="linuxSystemArchi" width="550" height="350">
+
+- 유저 레이어에서 어플리케이션이 실행되면 라이브러리를 사용할 수 있고, 라이브러리를 통해 or 어플리케이션이 직접 시스템 콜을 호출한다.(os 서비스가 필요할 때)
+
+- 결국, 리눅스 시스템에는 두가지 인터페이스가 존재한다.
+    1. 시스템 콜 (유저와 커널 사이 인터페이스)
+    2. 디바이스 드라이버 (커널과 하드웨어 사이)
+        - 정확히 디바이스 컨트롤러와 통신한다

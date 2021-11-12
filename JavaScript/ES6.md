@@ -9,6 +9,7 @@
 8. 클로저
 9. js 소괄호 의미
 10. 전역객체
+11. 'length' 프로퍼티
 
 
 # 바로 잡아야 할 것
@@ -654,5 +655,72 @@ user.sayHi(); // 보라
     // 위와 동일하게 동작
     window.alert("Hello"); 👈
     ```
+
+# 'length' 프로퍼티
+내장 프로퍼티 length는 **함수 매개 변수의 개수를 반환**합니다.
+```
+function ask(question, ...handlers) {
+  let isYes = confirm(question);
+
+  for(let handler of handlers) {
+    if (handler.length == 0) {
+      if (isYes) handler();
+    } else {
+      handler(isYes);
+    }
+  }
+
+}
+
+// 사용자가 OK를 클릭한 경우, 핸들러 두 개를 모두 호출함
+// 사용자가 Cancel을 클릭한 경우, 두 번째 핸들러만 호출함
+ask("질문 있으신가요?", () => alert('OK를 선택하셨습니다.'), result => alert(result));
+```
+
+- 클로저는 함수 프로퍼티로 대체할 수 있다.
+- 두 방법의 차이점은 count 값이 외부 변수에 저장되어있는 경우 드러난다. 클로저를 사용한 경우엔 외부 코드에서 count에 접근할 수 없습니다.
+```
+function makeCounter() {
+
+  function counter() {
+    return counter.count++; // count값을 return해주고 +1을 해준다.
+  };
+
+  counter.count = 0; // 밖에서 count()가 호출될 때마다 1씩증가
+
+  return counter;
+}
+
+let counter = makeCounter();
+
+counter.count = 10;
+console.log( counter() ); // 10
+```
+
+# 기명 함수 표현식
+- 이름있는 함수 표현식으로 나타내는 용어이다.
+```
+let sayHi = function func(who) {
+  console.log(`Hello, ${who}`);
+};
+```
+- 두가지 변화가 생긴다
+    - 이름을 사용해 함수 표현식 내부에서 자기 자신을 참조할 수 있습니다.
+    - 기명 함수 표현식 외부에선 그 이름을 사용할 수 없습니다.
+```
+let sayHi = function func(who) {
+  if (who) {
+    console.log(`Hello, ${who}`);
+  } else {
+    func("Guest"); // 원하는 값이 제대로 출력
+  }
+};
+
+let welcome = sayHi;
+sayHi = null;
+
+welcome(); // Hello, Guest (중첩 호출이 제대로 동작함)
+```
+
 # JS 소괄호 의미
 - https://heecheolman.tistory.com/23

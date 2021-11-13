@@ -1,0 +1,1 @@
+이 프로그램을 실행하기 위해 [링크](https://github.com/mrdoob/three.js/tree/dev/build)로 이동해서 three.module.js를 다운로드 받고 해당 폴더에 넣어야한다. 

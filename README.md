@@ -6,6 +6,9 @@
 - [JSON](./JavaScript/JSON.md)
 - [RegExpression](./JavaScript/RegExp.md)
    - Update Later
+- [AJAX](./JavaScript/AJAX.md)
+- [Event](./JavaScript/event.md)
+   - Update Later
 # TypeScript
 - [TypeScript](./TypeScript/사용법.md)
    - Update Later
@@ -23,6 +26,8 @@
 # React
 - [라이브러리](./React/라이브러리.md)
    - Update Later
+# ThreeJS
+- [ThreeJS](./ThreeJS/README.md)
 # CS
 - [기초](./CS/basic.md)
 - [리눅스](./CS/Linux.md)

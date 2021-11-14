@@ -10,13 +10,22 @@
 - Vue
 
 웹 앱의 장점
-1. 모바일앱으로 발행이 쉽다.
-    [PWA](../ETC/PWA.md) / React Native 등..으로 가능
+- 기능
+    1. 모바일앱으로 발행이 쉽다.
+        [PWA](../ETC/PWA.md) / React Native 등..으로 가능
 
-2. 앱처럼 뛰어난 UX
-    - 빠른 느낌
-3. 그냥 웹사이트보다 비즈니스적 강점
-    - [구매전환율](https://m.searchad.naver.com/dic/view/50) 상승
+    2. 앱처럼 뛰어난 UX
+        - 빠른 느낌
+    3. 그냥 웹사이트보다 비즈니스적 강점
+        - [구매전환율](https://m.searchad.naver.com/dic/view/50) 상승
+- **유지보수**
+    1. Reusability
+        - ex. 코드의 중복을 없애고 편리하기 위함, 새로운 기능을 없애고 빠르게 추가 시킬 수 있음.
+    2. Performance
+        - ex. vertual DOM을 통해 가능해지고 자주 바뀌는 기능이 많아지면서 performance가 중요해짐
+            - 보통, 브라우저가 DOM트리를 가지고 화면에 뿌려주면 비로소 화면 생성
+            - vertual DOM : 요즘 웹들의 특성이 반응성(ex.누르면 변경)이 많다 = DOM트리의 변경이 잦다 = 기존의 웹은 너무 느려서 최적화 시켜야한다(DOM 프로세스를 바꿀 수 없으니 프로세스 횟수를 최소화하자) = vertual DOM이 만들어짐 
+    - 📌단, 모든 문제는 거대한 프로세스 과정에서 발생한다.
 
 # React 프로젝트 생성
 1. 작업폴더 생성
@@ -51,9 +60,30 @@ src 폴더 : 소스코드 보관함
 package.json : 설치한 라이브러리 목록(이름, 버전)을 모아놓는 파일
 - npm으로 라이브러리설치시 목록을 자동 기록
 
-# HTML대신 JSX?
+# HTML대신 JSX
 
 ## JSX 사용법
+1. 태그에 class를 주고 싶다면? className이용
+    - ``<div class=""></div>`` 불가능 😅
+    - ``<div className="클래스명"></div>``
+2. 데이터 바인딩을 쉽게 해준다. 중괄호이용
+    - 데이터 바인딩 : 데이터를 HTML에 넣는 행위
+        - 리액트, 앵귤러, 뷰가 정통 HTML코딩보다 편리한 이유
+    - 보통 서버에서 받아온 데이터를 자바스크립트로 HTML에 넣는다. ``ex) document.getEl..getInner...`` 하지만, 리액트에서 JSX문법으로 서버에서 받아온 데이터를 ``ex) <h4>{ 변수명 }</h4>``으로 해결해줄 수 있다.
+    - 함수명으로 함수의 결과를 사용가능 ``ex) <h4>{ 함수명() }</h4>``
+    - src, id, href 등의 속성에도 사용가능 ``ex) <img src={ 변수명 }/>``
+    - 클래스명에도 사용가능 ``<div className={ 변수명 }></div>``
+    - 등..
+3. JSX에서 style속성을 작성할 때, object 형식을 이용
+    - ``<div style="color : blue; font-size: 16px;"></div>`` 불가능 😅
+    - ``style={object자료형으로 만든 스타일}``
+        - 스타일의 오른쪽은 항상 텍스트.
+        - 스타일의 인쪽은 - 를 사용할 수 없다. 따라서, camelCase 작명 관습에 따라 속성명을 바꿔줘야한다.
+        - CSS 인라인 스타일
+            - ``<div style={{ color : 'blue', fontSize : '30px'}}></div>``
+            - 위의 ``{ color : 'blue', fontSize : '30px'}``을 변수로 만들어서 사용 가능
+        - 보통 클래스 만들어서 css를 가져다가 사용
+
 
 # ref
 - https://react.vlpt.us/

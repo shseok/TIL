@@ -28,7 +28,7 @@
     - CSR 시대 시작
 
 ## CSR (Client Side Rendering)
-클라이언트 측에서 모두 처리
+클라이언트 측에서 모두 처리. Application에 필요한 page와 장비를 최초 로드에 다 가져온다.
 
 - 문제점
     1. Initial Loading may take too long

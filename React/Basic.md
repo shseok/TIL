@@ -1,3 +1,10 @@
+# Index
+1. 리액트가 쓰이는 이유
+2. React 프로젝트 생성
+3. 초기 생성된 React 프로젝트
+4. state 
+5. 이벤트 리스너
+99. Reference
 # 리액트 왜 쓸까?
 
 웹 앱(Web-app)
@@ -61,7 +68,7 @@ package.json : 설치한 라이브러리 목록(이름, 버전)을 모아놓는 
 - npm으로 라이브러리설치시 목록을 자동 기록
 
 # HTML대신 JSX
-
+JSX 👍
 ## JSX 사용법
 1. 태그에 class를 주고 싶다면? className이용
     - ``<div class=""></div>`` 불가능 😅
@@ -84,6 +91,31 @@ package.json : 설치한 라이브러리 목록(이름, 버전)을 모아놓는 
             - 위의 ``{ color : 'blue', fontSize : '30px'}``을 변수로 만들어서 사용 가능
         - 보통 클래스 만들어서 css를 가져다가 사용
 
+# 데이터 보관 방법 state
+데이터는 변수에 넣거나 state에 넣는 방법이 존재
 
+## state 사용법
+1. ``{useState}``를 상단에 첨부
+    - 리액트의 데이터 저장공간 state 만드는 법
+    - detail: ``import React, {useState} from 'react';``
+        - 해석: 리액트에 있는 내장 함수를 사용하겠습니다.
+2. ``useState(데이터)``를 이용해 만들어야한다 
+    - 데이터(state)와 데이터(state)를 수정해주는 함수를 배열로 만들어준다
+    - ex) ``let [state,state변경함수] = useState(데이터);`` 
+3. 문자,숫자, array, object 모두 저장가능
+    - ex) ``useState([데이터1, 데이터2])``
+
+## state에 데이터 저장하는 이유
+웹이 App처럼 동작하게 만들기 위해. 즉, 새로고침(reload)없이도 HTML이 **자동으로 재렌더링**되기 위해
+- 자주 바뀌는, 중요한 데이터는 변수말고 state에 저장해서 써야 웹 앱처럼 동작 가능하게 만들 수 있다
+
+# 이벤트 리스너(핸들러)
+1. ``onClick={클릭될때 실행할 JS함수}`` | ``onClick={()=>{실행할 내용}}``
+    - onclick이 아니다.
+2. state를 변경하고 싶을 때, ``useState(데이터)``를 이용해 만든 state를 수정해주는 함수 이용
+    - state는 그냥 변경이 안되기 때문에
+    - ``state변경함수(대체할 데이터)``
+    - **state 변경함수로 변경해야 재렌더링**이 가능
 # ref
 - https://react.vlpt.us/
+- https://ko.reactjs.org/docs/hooks-state.html

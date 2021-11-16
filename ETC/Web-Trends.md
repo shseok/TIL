@@ -77,3 +77,6 @@ Gatsby처럼 React에서 함께 사용된다.
 
 ## 정답은 없다.
 - Our Site is static? dynamic? 서버에서 동적으로 데이터를 받아오는가? 얼마나 자주, 많은 사용자가 있는지?에 따라 TTV와 TTI를 유연히 사용하자
+
+# Ref 
+https://ivorycode.tistory.com/entry/SSRSever-Side-Rendering%EA%B3%BC-CSRClient-Side-Rendering

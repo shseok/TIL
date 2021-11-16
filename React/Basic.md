@@ -4,6 +4,7 @@
 3. 초기 생성된 React 프로젝트
 4. state 
 5. 이벤트 리스너
+6. Component
 99. Reference
 # 리액트 왜 쓸까?
 
@@ -112,10 +113,63 @@ JSX 👍
 # 이벤트 리스너(핸들러)
 1. ``onClick={클릭될때 실행할 JS함수}`` | ``onClick={()=>{실행할 내용}}``
     - onclick이 아니다.
-2. state를 변경하고 싶을 때, ``useState(데이터)``를 이용해 만든 state를 수정해주는 함수 이용
+2. state를 변경하고 싶을 때, ``useState(데이터)``를 이용해 만든 state를 변경시켜 주는 함수 이용
     - state는 그냥 변경이 안되기 때문에
     - ``state변경함수(대체할 데이터)``
-    - **state 변경함수로 변경해야 재렌더링**이 가능
+    - **유일하게 state 변경함수로 변경해야 재렌더링**이 가능
+    - ex) ``<p onClick={() => { heartChange(heartNum + 1) }}>👍</p>``
+        - 누를때만 state 변경
+
+# Component
+- Modal창과 같은 상세페이지를 만들 때, Component를 사용하여 분리
+- 항상 return ( ) 안에 HTML으로 작성
+    - 단, 소괄호안에 항상 하나의 HTML 태크로 시작하고 끝나야한다.
+    - 연속된 태크로 사용불가하다. 무조건 하나의 HTML 태그로 묶어서 해결
+- html의 많은 태크들은 줄여서 쓸 수 있는 방법 : **Component**
+    - HTML을 한 단어로 줄여서 쓸 수있는 방법
+- 여러 엘리먼트를 반환. HTML 덩어리
+- 장점:
+    - 가독성이 좋고 훗날 관리하기 쉽다.
+    - 컴포넌트 안에 컴포넌트를 만들 수 있다.
+    - 컴포넌트를 만드는 기준
+        1. 반복출현하는 HTML 덩어리들
+        2. 자주 변경되는 HTML UI들
+            - 재 랜더링이 일어나는 묶음으로써 성능적 이점
+    - 다른 페이지를 만들때도 컴포넌트로 만들 수 있다.
+- 단점:
+    - state를 쓸 때 복잡하다
+        - 상위 component에서 만든 state를 쓰려면 props문법을 이용해야한다.
+
+## Component 사용법
+```
+function App(){
+    return (
+        <Modal/> // = <modal></modal>
+    );
+}
+
+function Modal(){
+    return (
+        <> // fragment 문법으로 의미없는 div안쓰고 여러 HTML을 묶어서 한곳에 넣을 수 있다.
+            <div className="modal">
+                <h2>제목</h2>
+                <p>날짜</p>
+                <p>상세내용</p>
+            </div>
+            <div></div>
+        </>
+    )
+}
+```
+1. 함수 만들고 이름을 짓는다. 단, 쓰이는 컴포넌트 위칭에 나란히 만든다.
+    - 이름은 **대문자**로 시작한다
+2. return ()소괄호 안에 있는건 하나의 태그로 묶어야한다
 # ref
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html
+- http://yoonbumtae.com/?p=3632
+3. 원하는 곳에 <함수명/>
+
+# 배울 것
+- 라우터(패이지 구분)
+- 

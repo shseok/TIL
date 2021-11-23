@@ -31,5 +31,8 @@
 5. [Translating and starting a program](./Translating-starting-program.md)
 6. [Arithmetic for Computers](./ArithmeticComputer.md)
     - 복습 필요
+7. [floating point](floating-point.md)
+8. [MIPS Processor](Processor.md)
+    - 복습 필요
 
 **by 안정섭 교수님 (Ajou Univ.)**

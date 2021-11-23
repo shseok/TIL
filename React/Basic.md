@@ -165,6 +165,30 @@ function Modal(){
 1. 함수 만들고 이름을 짓는다. 단, 쓰이는 컴포넌트 위칭에 나란히 만든다.
     - 이름은 **대문자**로 시작한다
 2. return ()소괄호 안에 있는건 하나의 태그로 묶어야한다
+
+# useEffect
+1. dependency array안에 값이 없으면 componentDidMount
+```
+React.useEffect(effet:()=>{
+    console.log('use effect ran');
+}, deps[])
+```
+2. dependency array안에 값이 바뀌면 effect가 실행이 된다.
+```
+React.useEffect(effet:()=>{
+    console.log('use effect ran'); 
+}, deps[counter])
+```
+3. socket io를 할때, return 함수를 주어 unmount로 닫아주는 로직을 작성
+```
+React.useEffect(effet:()=>{
+    console.log('use effect ran');
+
+    return () => {
+        console.log('unmout');
+    };
+}, deps[counter])
+```
 # ref
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html

@@ -33,6 +33,12 @@
     - 떨어져있지만 똑같은 형태인 것 선택
     - "Ctrl+D"를 통해 multi-select가 가능하다.
         - 같은 이름 one by one search 후 선택
+
+## 화면 close up / down
+- Close Up
+    - Ctrl + '+'
+- Close Down
+    - Ctrl + '-'
 # Snippet
 코딩할 때, 단축어처럼 특정키를 입력하면 자동완성해주는 기능
 - 비쥬얼 스튜디오의 extension에서 snippet을 다운받아 사용할 수 있다.

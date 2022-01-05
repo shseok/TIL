@@ -91,7 +91,22 @@ JSX 👍
             - ``<div style={{ color : 'blue', fontSize : '30px'}}></div>``
             - 위의 ``{ color : 'blue', fontSize : '30px'}``을 변수로 만들어서 사용 가능
         - 보통 클래스 만들어서 css를 가져다가 사용
+## class와 for 
+React와 JSX는 class와 for를 제외하면 표준 HTML 속성을 모두 사용할 수 있다. class와 for는 자바스크립트와 ECMAScript의 예약어고, JSX는 일반 자바스크립트로 변환해서 사용한다. 따라서 class와 for 대신에 각각 className과 htmlFor를 사용한다. 예를 들어 hidden이라는 CSS 클래스를 적용하는 경우 <div>에 다음과 같이 정의할 수 있다.
 
+```<div className=“hidden”>…</div>```
+ 
+
+- 폼 요소를 위한 label 요소를 생성하는 경우, for 대신에 htmlFor를 사용한다.
+
+```
+    <div>
+    <input type=“radio” name={this.props.name} id={this.props.id} />
+    <label htmlFor={this.props.id}>
+        {this.props.label}
+    </label>
+    </div>
+```
 # 데이터 보관 방법 state
 데이터는 변수에 넣거나 state에 넣는 방법이 존재
 
@@ -194,8 +209,11 @@ React.useEffect(effet:()=>{
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html
 - http://yoonbumtae.com/?p=3632
+- class와 for
+    - https://thebook.io/006961/part01/ch03/04/04/
 3. 원하는 곳에 <함수명/>
 
 # 배울 것
 - 라우터(패이지 구분)
 - 
+

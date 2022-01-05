@@ -53,6 +53,7 @@ https://github.com/tensorflow/tensorflow/blob/master/LICENSE
     - 어떤 것은 내가 선언한대로 permission을 줄 수 있다.
         - permission의 종류
             - BY(저작자 명시), SA(라이센스 변경x), ND(내작품을 그대로), NC(상업적으로 x)
+            
             <img src="../img/cc.png" alt="cc" width="450" height="300">
 - public domain
     - 그저 자유

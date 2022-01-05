@@ -173,7 +173,8 @@ React.useEffect(effet:()=>{
     console.log('use effect ran');
 }, deps[])
 ```
-2. dependency array안에 값이 바뀌면 effect가 실행이 된다.
+2. dependency array안에 값이 바뀌면 effect가 실행이 된다.   
+componentDidUpdate
 ```
 React.useEffect(effet:()=>{
     console.log('use effect ran'); 

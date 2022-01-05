@@ -13,7 +13,7 @@
 - Software that converts hardware into a useful form for applications
 - The one program so-called **kernel** running at all times on the computer
 
-## What Operating SYstems Do
+## What Operating Systems Do
 
 - 유저와 어플리케이션 관점
      - OS가 편한하고 좋은 성능을 주는 인터페이스를 제공해줘야한다

@@ -190,3 +190,5 @@ Array.from(map.keys());
     ```
     - 0처럼 falsy로 평가되는 값들을 일반 값처럼 처리할 수 있어서 좋다
 
+# ()와 {} 사용시 주의할 점
+[자세히](https://velog.io/@bigbrothershin/JavaScript-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%99%80-%EC%82%AC%EC%9A%A9%EC%83%81-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)

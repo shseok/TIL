@@ -3,8 +3,9 @@
 2. React 프로젝트 생성
 3. 초기 생성된 React 프로젝트
 4. state 
-5. 이벤트 리스너
-6. Component
+5. props
+6. 이벤트 리스너
+7. Component
 99. Reference
 # 리액트 왜 쓸까?
 
@@ -91,6 +92,7 @@ JSX 👍
             - ``<div style={{ color : 'blue', fontSize : '30px'}}></div>``
             - 위의 ``{ color : 'blue', fontSize : '30px'}``을 변수로 만들어서 사용 가능
         - 보통 클래스 만들어서 css를 가져다가 사용
+4. JSX 태그안에서 중괄호 "{}"는 자바스크리브를 사용할 수 있도록 한다.
 ## class와 for 
 React와 JSX는 class와 for를 제외하면 표준 HTML 속성을 모두 사용할 수 있다. class와 for는 자바스크립트와 ECMAScript의 예약어고, JSX는 일반 자바스크립트로 변환해서 사용한다. 따라서 class와 for 대신에 각각 className과 htmlFor를 사용한다. 예를 들어 hidden이라는 CSS 클래스를 적용하는 경우 <div>에 다음과 같이 정의할 수 있다.
 
@@ -124,6 +126,16 @@ React와 JSX는 class와 for를 제외하면 표준 HTML 속성을 모두 사용
 ## state에 데이터 저장하는 이유
 웹이 App처럼 동작하게 만들기 위해. 즉, 새로고침(reload)없이도 HTML이 **자동으로 재렌더링**되기 위해
 - 자주 바뀌는, 중요한 데이터는 변수말고 state에 저장해서 써야 웹 앱처럼 동작 가능하게 만들 수 있다
+
+# props
+props 는 properties 의 줄임말이다. 주로, 어떠한 값을 컴포넌트에게 전달해줘야 할 때, props 를 사용한다.
+
+## props 사용법
+1. props로 받음
+    - 컴포넌트 태그 사이의 값을 조회 : props.children
+2. 컴포넌트에 props를 지정하지 않았을 때, defaultprops 설정하여 받음
+
+- [자세히](https://react.vlpt.us/basic/05-props.html)
 
 # 이벤트 리스너(핸들러)
 1. ``onClick={클릭될때 실행할 JS함수}`` | ``onClick={()=>{실행할 내용}}``

@@ -109,6 +109,62 @@ React와 JSX는 class와 for를 제외하면 표준 HTML 속성을 모두 사용
     </label>
     </div>
 ```
+
+5. JSX 배열 반복문 렌더링
+- 자바스크립트 반복문을 통해 DOM에 JSX을 렌더링하고 싶을 때, 컴포넌트 return문 안에서 for문은 못 쓴다.
+```
+function App() {
+  const weekArr = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+  return
+    (
+      <div>
+        {
+          for ( let i = 0; i < weekArr.length; i++) 
+            {
+              <span>{weekArr(i)}</span>
+            }
+        }
+      </div>
+    )
+}
+
+```
+- 해결방법
+    1. return문에서 JSX를 반환하는 함수 호출 (재사용성, return문 깔끔)
+    ```
+    function App() {
+    const weekArr = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+    
+    const rendering = () => {
+        const result = [];
+        for (let i = 0; i < weekArr.length; i++) {
+        result.push(<span key={i}>{weekArr[i] + " / "}</span>);
+        }
+        return result;
+    };
+
+    return <div>{rendering()}</div>;
+    }
+    ```
+    2. return문 안에서 map사용 (직관적, 가독성 좋음)
+    ```
+    function App() {
+        const weekArr = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+
+        return (
+            <div>
+            {weekArr.map((week, index) => (
+                <span key={index}>
+                {week}
+                {" / "}
+                </span>
+            ))}
+            </div>
+        );
+        }
+    ```
+- [자세히](https://codingbroker.tistory.com/123)
+
 # 데이터 보관 방법 state
 데이터는 변수에 넣거나 state에 넣는 방법이 존재
 
@@ -136,6 +192,8 @@ props 는 properties 의 줄임말이다. 주로, 어떠한 값을 컴포넌트�
 2. 컴포넌트에 props를 지정하지 않았을 때, defaultprops 설정하여 받음
 
 - [자세히](https://react.vlpt.us/basic/05-props.html)
+
+3. 숫자형태로 받고 싶다면 괄호를 넣어서 전달해준다.  ex) 전달시 price={3000} 
 
 # 이벤트 리스너(핸들러)
 1. ``onClick={클릭될때 실행할 JS함수}`` | ``onClick={()=>{실행할 내용}}``

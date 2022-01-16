@@ -24,3 +24,8 @@
 1. Mobx
 2. Overmind.js
 3. Recoil
+
+
+# 이해하기
+1. https://www.youtube.com/watch?v=wSbjROmXTaY&t=71s
+2. https://www.youtube.com/watch?v=b5BH7kPboMk&t=8139s (2:15:00)

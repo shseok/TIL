@@ -64,16 +64,6 @@
    - Update Later
 - [Web-Trends](./ETC/Web-Trends.md)
 
-# 일정
-- TOPCIT
-   - 21.10.30 09:30~12:00
-   - 성적확인 21.11.6
-
-# 건강검진
-- 11월 1일 ~ 11월 30일
-
-# 구글메일 확인 후 설문지
-
 # 채용관련
 
 - linkedIn

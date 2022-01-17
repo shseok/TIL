@@ -45,9 +45,10 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 
 📌 branch 만들고 바로 작성하려고 하지말고 원격 저장소 변경사항이 없는지 pull로 업데이트 해주기!
 
-[도움1](https://chanhuiseok.github.io/posts/git-3/)
-[도움2](https://chanhuiseok.github.io/posts/git-2/)
+[Pull Request(PR) 보내는 방법](https://chanhuiseok.github.io/posts/git-3/)
+[원격저장소의 최신 커밋 내역을 업데이트](https://chanhuiseok.github.io/posts/git-2/)
 [pull request 생활코딩](https://www.youtube.com/watch?v=uvsz2XgRPfM&list=PLuHgQVnccGMBXv1OKe3Hn3Jq6F735-uWm)
+[https://www.youtube.com/watch?v=9FZaYz0s8s4&t=412s](라매 개발자의 PR1)
 
 # Code Review
 - 코드 리뷰는 PR통해 할 수 있다. 리뷰 상황이 중요한 이유는 이 리뷰 상황에 따라 머지를 할지 하지 않을지 결정하는 확인절차 중 하나이기 때문이다.

@@ -6,6 +6,7 @@
 하지만, link로 open this in GitHub Desktop / command line instructions가 보인다. 에디터를 이용하여 디버그를 하기위해 두번째 방법을 사용할 것이다.
 
 📌 master로 바로 push 하지말고 브랜치만들어서 PR하고 merge하는 습관!
+    - 브랜치를 만들어 PR하면 유저가 PR할 때처럼 Compare & pull reqeust 버튼이 활성화된다. 활성화가 안되면 pull request창가서 branch를 바꿔줘서 진행한다.
 
 📌 conflict 날 때, command line 도움받아서 에디터에서 작업하기
 

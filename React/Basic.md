@@ -71,6 +71,9 @@ package.json : 설치한 라이브러리 목록(이름, 버전)을 모아놓는 
 
 # HTML대신 JSX
 JSX 👍
+- 리액트 컴포넌트에서 xml 형식의 값을 반환해는 것. 리액트 컴포넌트 파일에서 XML 형태로 코드를 작성하면 babel 이 JSX 를 JavaScript 로 변환을 해준다.
+- return (...) 내부에서 활용
+
 ## JSX 사용법
 1. 태그에 class를 주고 싶다면? className이용
     - ``<div class=""></div>`` 불가능 😅
@@ -165,6 +168,40 @@ function App() {
     ```
 - [자세히](https://codingbroker.tistory.com/123)
 
+6. 꼭 닫혀야하는 태그
+HTML 에서는 input 또는 br 태그를 사용 할 때 닫지 않고 사용하기도 하는데, 리액트에서는 그렇게 하면 안되고 괄호를 닫아줘야한다!
+
+7. 감싸져야하는 태그
+두개 이상의 태그는 무조건 하나의 태그로 감싸져있어야 한다.
+    - [fragment](https://ko.reactjs.org/docs/fragments.html#short-syntax)로 table와 같은 예외상황때문에 주로 쓰인다.
+        - 브라우저 상에서 따로 별도의 엘리먼트로 나타나지 않는다.
+
+아래는 오류코드
+```
+function App() {
+  return (
+    <Hello />
+    <div>안녕히계세요.</div>
+  );
+}
+
+export default App;
+
+```
+
+정상코드
+```
+function App() {
+  return (
+    <div>
+      <Hello />
+      <div>안녕히계세요</div>
+    </div>
+  );
+}
+
+export default App;
+```
 # 데이터 보관 방법 state
 데이터는 변수에 넣거나 state에 넣는 방법이 존재
 
@@ -188,13 +225,31 @@ props 는 properties 의 줄임말이다. 주로, 어떠한 값을 컴포넌트�
 
 ## props 사용법
 1. props로 받음
-    - 컴포넌트 태그 사이의 값을 조회 : props.children
+    - 컴포넌트 태그 사이의 값을 조회 : **props.children**
 2. 컴포넌트에 props를 지정하지 않았을 때, defaultprops 설정하여 받음
 
 - [자세히](https://react.vlpt.us/basic/05-props.html)
 
 3. 숫자형태로 받고 싶다면 괄호를 넣어서 전달해준다.  ex) 전달시 price={3000} 
 
+4. defaultProps
+    - 컴포넌트에 props 를 지정하지 않았을 때 기본적으로 사용 할 값을 설정하고 싶을 때 쓰인다.
+
+    ```
+        import React from 'react';
+
+        function Hello({ color, name }) {
+            return <div style={{ color }}>안녕하세요 {name}</div>
+        }
+
+        Hello.defaultProps = {
+            name: '이름없음'
+        }
+
+        export default Hello;
+    ```
+
+5. 
 # 이벤트 리스너(핸들러)
 1. ``onClick={클릭될때 실행할 JS함수}`` | ``onClick={()=>{실행할 내용}}``
     - onClick={여기에 해당 함수를 따로 만들고 함수 이름만 넣어도 된다.}
@@ -282,8 +337,3 @@ React.useEffect(effet:()=>{
 - class와 for
     - https://thebook.io/006961/part01/ch03/04/04/
 3. 원하는 곳에 <함수명/>
-
-# 배울 것
-- 라우터(패이지 구분)
-- 
-

@@ -62,3 +62,6 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 
 
 3. setting의 branch 관리에서 리뷰 approch를 받아야 merge를 할 수 있도록 설정도 가능하다.
+
+# github actions
+[자세히](https://meetup.toast.com/posts/286)

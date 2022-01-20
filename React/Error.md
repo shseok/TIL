@@ -46,3 +46,13 @@
             - cloud firestore 인스턴스를 초기화하는 부분에서 최신버전 적용. + 업데이트 이후로 node.js로 적용이 안되어 modular로 바꾸는 과정 요구
                 - [데이터 추가](https://firebase.google.com/docs/firestore/manage-data/add-data)
                 - [데이터 읽기](https://modularfirebase.web.app/common-use-cases/firestore/)
+
+7. Warning: A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+    - 문제점
+        -  input버튼을 눌렀을 때, value에 undefined가 들어갔기 때문에 해당 오류가 발생했다. 
+    - 해결방법
+        - 처음 useState의 기본값을 key, value를 가진 객체로 초기화하였다. input버튼을 누르면 setState 함수가 사용되는데 이때, 기본값으로 설정한 객체의 key를 다룰 때 오타나서 undefined로 들어감을 인지하고 setState내부의 key 오타를 수정하여 해결하였다.
+
+8. React Hook "useState" is called in function "test" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"
+    - 문제점
+        - component 이름을 소문자로 적고 useState를 사용해서 발생

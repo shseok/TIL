@@ -366,7 +366,7 @@ React.useEffect(effet:()=>{
 - 새로운 객체를 만들어서 새로운 객체에 변화를 주고, 이를 상태로 사용해주어야 한다
     ```
         setInputs({
-            ...inputs,  👌
+            ...inputs,  👌 - spread는 앞에 두나 뒤로 두나 상관x, rest는 상관o
             [name]: value
         });
     ```
@@ -379,6 +379,9 @@ React.useEffect(effet:()=>{
         - key를 설정하지 않을 때 경고 메시지가 뜨는데, 각 고유 원소에 key 가 있어야만 배열이 업데이트 될 때 효율적으로 렌더링 될 수 있기 때문이다.
         - key를 설정하지 않을 때: 중간의 값이 바뀐다면, 그 하위 값들이 전부 변해서 비효율.
         - key를 설정 했을 때: 중간의 값이 바뀐다면, key를 이용해 중간의 값을 추가.
+
+## 배열에 항목 추가하기, 제거하기 , 수정하기
+- set함수를 사용할 때, spread or concat함수로 state를 set해야한다
 # ref
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html

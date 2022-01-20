@@ -209,7 +209,7 @@ export default App;
 1. ``{useState}``를 상단에 첨부
     - 리액트의 데이터 저장공간 state 만드는 법
     - detail: ``import React, {useState} from 'react';``
-        - 해석: 리액트에 있는 내장 함수를 사용하겠습니다.
+        - 해석: 리액트에 있는 내장 함수를 사용할 것이다.
 2. ``useState(데이터)``를 이용해 만들어야한다 
     - 데이터(state)와 데이터(state)를 수정해주는 함수를 배열로 만들어준다
     - ex) ``let [state,state변경함수] = useState(데이터);`` 
@@ -249,10 +249,35 @@ props 는 properties 의 줄임말이다. 주로, 어떠한 값을 컴포넌트�
         export default Hello;
     ```
 
-5. 
+5. 조건부 렌더링
+특정 조건에 따라 다른 결과물을 렌더링 하는 것을 의미한다
+- 특정 조건에 따라 보여줘야하는 내용을 달리할 때, 삼항연산자를 사용한다
+- 더 좋은 방법으로는 **&&연산자**를 사용해서 처리하는게 좋다.
+    - 📌JSX 에서 null, false, undefined 를 렌더링하게 된다면 아무것도 나타나지 않게 된다.
+    ```
+        import React from 'react';
+
+        function Hello({ color, name, isSpecial }) {
+            return (
+                <div style={{ color }}>
+                {isSpecial && <b>*</b>}  <- false일 때, false / true일 때, <b>*</b>
+                안녕하세요 {name}
+                </div>
+            );
+        }
+
+        Hello.defaultProps = {
+            name: '이름없음'
+        }
+
+        export default Hello;
+    ```
+6. props 전달할 때, 값 설정을 생략하면 true로 값이 할당된다.
+    - ``<Hello name="react" color="red" isSpecial />``
 # 이벤트 리스너(핸들러)
 1. ``onClick={클릭될때 실행할 JS함수}`` | ``onClick={()=>{실행할 내용}}``
     - onClick={여기에 해당 함수를 따로 만들고 함수 이름만 넣어도 된다.}
+    - 📌 onClick={function()} 이런형태로 넣으면 렌더링되는 시점에서 함수가 호출되버리기 때문에 작동하지 않는다. 따라서 함수를 실행시키는게 아니라 함수형태를 넣어주거나 함수타입의 값을 넣어주어야한다.
 2. state를 변경하고 싶을 때, ``useState(데이터)``를 이용해 만든 state를 변경시켜 주는 함수 이용
     - state는 그냥 변경이 안되기 때문에
     - ``state변경함수(대체할 데이터)``
@@ -330,6 +355,30 @@ React.useEffect(effet:()=>{
     };
 }, deps[counter])
 ```
+
+# Advanced (심화)
+## 여러개의 input 상태 관리하기
+단순히 useState 를 여러번 사용하고 onChange 도 여러개 만들어서 구현 할 수 있지만, input 에 name 을 설정하고 이벤트가 발생했을 때 이 값을 참조하는 방법이 있다. 이때, useState에서는 객체 형태의 상태로 관리해준다.
+- 리액트 상태에서 객체를 수정해야 할 때, 직접 수정하면 안된다.
+    ```
+        inputs[name] = value; ❌
+    ```
+- 새로운 객체를 만들어서 새로운 객체에 변화를 주고, 이를 상태로 사용해주어야 한다
+    ```
+        setInputs({
+            ...inputs,  👌
+            [name]: value
+        });
+    ```
+    - [name] > [계산된 속성명에 대한 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names)
+
+## Map을 사용한 배열 렌더링
+동적인 배열을 렌더링할 때, map() 을 사용한다. 
+    - 보통, 일반 데이터 배열을 리액트 엘리먼트로 이루어진 배열로 변환하는데 사용된다.
+    - 📌리액트에서 배열을 렌더링 할 때에는 key 라는 props 를 설정해야한다.
+        - key를 설정하지 않을 때 경고 메시지가 뜨는데, 각 고유 원소에 key 가 있어야만 배열이 업데이트 될 때 효율적으로 렌더링 될 수 있기 때문이다.
+        - key를 설정하지 않을 때: 중간의 값이 바뀐다면, 그 하위 값들이 전부 변해서 비효율.
+        - key를 설정 했을 때: 중간의 값이 바뀐다면, key를 이용해 중간의 값을 추가.
 # ref
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html

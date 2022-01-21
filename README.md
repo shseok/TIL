@@ -50,6 +50,9 @@
 # Database
 - [기초](./Database/종류.md)
 - [MYSQL](./Database/MYSQL.md)
+
+# Cloud
+- [정의](./Cloud/README.md)
 # ETC
 - [MarkDown](./ETC/MarkDown.md)
 - [Tools](./ETC/유용한-TooL.md)

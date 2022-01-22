@@ -46,3 +46,9 @@
 ### rafce
 리액트에서 함수형 component 을 만들 때 기본코드가 제공된다.
 
+# VSCODE에서 카카오 맵을 사용
+
+카카오에 도메인 등록을 해야하는데, 이때 127.0.0.1:5500 을 추가해줘야한다. 
+- VSCODE의 go live port인 5500이다.
+- localhost:5500도 추가해주면 좋다.
+- [자세히](https://injekim97.tistory.com/114)

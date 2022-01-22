@@ -65,3 +65,6 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 
 # github actions
 [자세히](https://meetup.toast.com/posts/286)
+
+# github pages
+https://wepplication.github.io/programming/github-pages/

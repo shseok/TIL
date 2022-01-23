@@ -9,6 +9,9 @@ React Hooks는 **Function Component**안에서만 사용할 수 있다.
 💡 State의 변화 -> 렌더링 -> 컴포넌트 내부 변수 초기화
 - 함수형 컴포넌트는 함수이다. 따라서, 리렌더링시 함수가 다시 불려지므로 내부의 모든 변수가 초기화된다. 
 
+💡 리액트 컴포넌트는 기본적으로 부모컴포넌트가 리렌더링되면 바뀐 내용이 없다 할지라도 자식 컴포넌트 또한 리렌더링이 된다.
+- 실제 DOM 에 변화가 반영되는 것은 바뀐 내용이 있는 컴포넌트에만 해당하지만, Virtual DOM 에는 모든걸 다 렌더링하고 있다.
+
 ## 1. useState
 state와 setState를 배열형태로 return해준다. state에는 현재 상태값이 들어있고 setState로 state를 변경할 수 있다
 ### setState
@@ -77,7 +80,8 @@ useState를 사용해서 초기값을 받아올 때, 무거운 일을 해야하�
     - 렌더링 될때 마다 callback 실행
 2. ``useEffect(() => { // work... }, [value] )``
     - 화면에 첫 렌더링 될때, value값이 바뀔때 실행
-    - [value]는 dependency array라고 불린다.
+    - [value]는 dependency array(deps)라고 불린다.
+        - 만약 useEffect 안에서 사용하는 상태나 props 를 deps 에 넣지 않게 된다면 useEffect 에 등록한 함수가 실행 될 때 최신 props / 상태를 가르키지 않게 됩니다.
     - value가 비어있으면 첫 렌더링될때만 실행
 
 해당 Hooks를 import해서 Lifecycle처럼 사용할 수 있다.
@@ -198,8 +202,18 @@ export default Timer;
             - 컴포넌트는 그 컴포넌트의 state나 props가 변경될 때마다 호출되는데(re-rendering), 함수형 컴포넌트는 일반 자바스크립트 함수와 마찬가지로 호출될 때마다 함수 내부에 정의된 로컬 변수들을 초기화한다. 하지만, useRef로 만들어진 객체는 React가 만든 전역 저장소에 저장되기 때문에 함수를 재 호출하더라도 마지막으로 업데이트한 current 값이 유지된다. 반면, 변수로 만든 값은 리렌더링시 선언된 값으로 초기화된다.
 
 ## 4. useMemo
+``const value = useMemo(()=> {function name}, [dependency array])``
+- 성능을 최적화할 때 사용한다.
+- memo는 memorized의 약자이다.
+- 첫번째 인수에는 함수, 두번째 인수에는 배열을 넣어주면 된다.
+    - 두번째 인수에 넣어준 배열의 값이 바뀔때만 함수가 실행된다. 그렇지 않다면 이전의 값을 재사용한다.
+- [연산한 값 재사용하기](https://react.vlpt.us/basic/17-useMemo.html)
 
 ## 5. useCallback
+``const memoizedCallback = useCallback(()=> {},[dependency array]);``
+- useMemo 는 특정 결과값을 재사용 할 때 사용하는 반면, useCallback은 특정 함수를 새로 만들지 않고 재사용하고 싶을 때 사용한다.
+- 특정함수에 대해 컴포넌트가 리렌더링 될 때마다 새로만들어 지고 한번만든 함수를 필요할 때만 새로 만들고 재사용하고 싶을 때 쓰인다.
+    - 컴포넌트에서 props 가 바뀌지 않았으면 Virtual DOM 에 새로 렌더링하는 것 조차 하지 않고 컴포넌트의 결과물을 재사용 하는 최적화 작업하기위해, 함수 재사용은 필수
 
 ### 사용법
 1. useRef() 객체 생성

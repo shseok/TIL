@@ -72,5 +72,10 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 - [자세히](https://wepplication.github.io/programming/github-pages/)
 - [자세히](https://ya-ya.tistory.com/14)
 
-
-
+# gitlab에서 github으로 프로젝트 가져오기 (미러링)
+1. github settings - developer settings - personal access token (repo check 후 생성)
+2. gitlab에서 가져올 레포지토리로가서 settings - repository - mirroring repositories - expand
+    - Git repository URL에 github에서 new repo로 만든 주소 적용 (단, https://shseok@github.com/shseok/smart-safety-system.git 이런식으로 username위치 변경)
+3. password에 github에서 발급받은 token을 넣어준다 
+4. morror repository 버튼 클릭 후 새로고침 버튼 클릭하면 github에 gitlab의 모든 정보(commit 포함)들이 올라간다
+- [자세히](https://worldforest9.tistory.com/287)

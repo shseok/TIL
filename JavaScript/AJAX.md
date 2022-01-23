@@ -29,13 +29,13 @@ Asynchronous JavaScript And XML
             - 장점: 웹페이지 전환이 부드러워진다. (like 웹 앱 )
     - 위 2가지 약속을 지킨다면 데이터를 준다.
 
-## 방식
+## [방식](https://chanhuiseok.github.io/posts/js-6/)
 최신 JS 방식
-1. 단순 fetch
+1. fetch
     ```
     <script>
         fetch('http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-            .then((response) => {
+            .then((response) => { // = function(response){ return response.json(); }
                 if(!response.ok){
                     throw new Error('400 or 500 error');
                 }
@@ -50,10 +50,13 @@ Asynchronous JavaScript And XML
     </script>
     ```
 - fetch 기본 함수에 URL을 적으면 자동으로 GET요청을 날려줌
-- then으로 파싱한 결과를 출력할 수 있음.
+    -  default로 http 메소드 중 GET으로 동작한다.
+- 호출 시 해당 주소에 요청을 보낸 다음, 응답 객체(object Response)를 받는다.
+- 첫 번째 then에서 그 응답을 받고 .json() 메서드로 파싱한 json 값을 리턴한다.
+    - 그 다음 then에서 리턴받은 json 값을 받고, 원하는 처리를 할 수 있다.
 - error 처리를 해주려면 마지막에 catch를 활용하거나 then내부에 if 활용
 
-2. async - await
+2. async / await
     ```
     <script>
         async function 데이터가져오는함수() {

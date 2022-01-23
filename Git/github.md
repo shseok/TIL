@@ -67,4 +67,10 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 [자세히](https://meetup.toast.com/posts/286)
 
 # github pages
-https://wepplication.github.io/programming/github-pages/
+## 방법
+- settings -> pages에서 source 를 선택하여 호스트되게 만들 수 있다.
+- [자세히](https://wepplication.github.io/programming/github-pages/)
+- [자세히](https://ya-ya.tistory.com/14)
+
+
+

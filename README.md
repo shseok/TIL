@@ -60,7 +60,7 @@
 - [VIM](./ETC/VIM.md)
 - [인코딩](./ETC/인코딩.md)
 - [컴퓨터처리속도와크기](./ETC/처리속도및사이즈.md)
-- [REST-API](./ETC/REST-API.md)
+- [API](./ETC/API.md)
 - [비동기프로그래밍](./ETC/비동기프로그래밍.md)
    - Update Later
 - [PWA](./ETC/PWA.md)

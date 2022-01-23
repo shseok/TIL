@@ -1,10 +1,17 @@
-let obj1 = { foo: 'bar', x: 42 }
-let obj2 = { foo: 'baz', y: 13 }
+var value = "value1";
 
-let clonedObj = { ...obj1 }
-// Object { foo: "bar", x: 42 }
+function boo() {
+    console.log(value);
+}
 
-let mergedObj = { ...obj1, ...obj2 }
-// Object { foo: "baz", x: 42, y: 13 }
+function foo() {
+    console.log(value);
+    boo();
+}
+function bar() {
+    var value = "value2";
+    console.log(value); // value2
+    foo(); // value1
+}
 
-console.log(mergedObj);
+bar();

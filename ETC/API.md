@@ -1,13 +1,16 @@
+# API
+API는 '프로그램과 프로그램을 연결시켜주는 매개체'이다.
+- Application Programming Interface
+- 기계(서버)와 기계(서버), 소프트웨어와 소프트웨어 사이에서의 지정된 형식으로 요청, 명령인 소통을 할 수 수단 
+- 네트워크 상에 API가 있는 것 뿐만아니라, 로컬 프로그램인 브라우저는 Web API를 통해 자바스크립트로부터 특정 동작들을 지시받기도 한다.
+- API 서버는 규격화 되어 있는 서버
+
+
 # REST API
 
 - [학술적으로 정확한 의미의 REST API](https://www.youtube.com/watch?v=RP_f5dMoHFc)
 
 - 정보들이 주고받아지는 데 있어서 개발자들 사이에 널리 쓰이는 일종의 **형식**
-- API
-    - Application Programming Interface
-    - 기계(서버)와 기계(서버), 소프트웨어와 소프트웨어 사이에서의 지정된 형식으로 요청, 명령인 소통을 할 수 수단 
-    - 네트워크 상에 API가 있는 것 뿐만아니라, 로컬 프로그램인 브라우저는 Web API를 통해 자바스크립트로부터 특정 동작들을 지시받기도 한다.
-
 - 프론트엔드 웹에서 서버에 데이터를 요청하거나 배달 앱에서 서버에 주문을 넣는 서비스들에서 오늘날 널리 사용되는 것
 - 각 요청이 어떤 동작이나 정보를 위한 것인지를 요청을 보면 추론 가능
 - URI
@@ -38,3 +41,4 @@
 - https://www.yalco.kr/23_rest_api/
 - https://programming119.tistory.com/194
 - [비동기 프로그래밍](./비동기프로그래밍.md)
+- [API와 API서버](https://maily.so/grabnews/posts/b2341a)

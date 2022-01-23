@@ -64,6 +64,14 @@ useState를 사용해서 초기값을 받아올 때, 무거운 일을 해야하�
 ## 2. useEffect
 컴포넌트가 Mount, Update, Unmount되었을 때 특정 작업을 처리할 코드를 실행시켜주고 싶을 때 사용된다. 
 - ``useEffect(()=> {})``
+- 마운트시 작업
+    - props 로 받은 값을 컴포넌트의 로컬 상태로 설정
+    - 외부 API 요청 (REST API 등)
+    - 라이브러리 사용 (D3, Video.js 등...)
+    - setInterval 을 통한 반복작업 혹은 setTimeout 을 통한 작업 예약
+- 언마운트시 작업
+    - setInterval, setTimeout 을 사용하여 등록한 작업들 clear 하기 (clearInterval, clearTimeout)
+    - 라이브러리 인스턴스 제거
 ### 형태
 1. ``useEffect(() => { // work... })``
     - 렌더링 될때 마다 callback 실행

@@ -56,3 +56,13 @@
 8. React Hook "useState" is called in function "test" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"
     - 문제점
         - component 이름을 소문자로 적고 useState를 사용해서 발생
+
+9. Uncaught Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+    - 문제점
+        - onClick 같은 이벤트에서 함수를 부르도록 썼을 때, 발생하였다.
+        - ex) `` <button onClick={onToggle()}>메뉴</button> ``
+        - 함수를 부른다 > render를 다시한다 > 또 함수를 부른다 > 반복
+    - 해결 방법
+        - ``<button onClick={onToggle}>메뉴</button>``
+        - 매개변수가 필요하다면
+            - ``<button onClick={() => onToggle(param)}>메뉴</button>``

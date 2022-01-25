@@ -12,23 +12,43 @@ React Hooks는 **Function Component**안에서만 사용할 수 있다.
 💡 리액트 컴포넌트는 기본적으로 부모컴포넌트가 리렌더링되면 바뀐 내용이 없다 할지라도 자식 컴포넌트 또한 리렌더링이 된다.
 - 실제 DOM 에 변화가 반영되는 것은 바뀐 내용이 있는 컴포넌트에만 해당하지만, Virtual DOM 에는 모든걸 다 렌더링하고 있다.
 
+💡 불변성을 지키기 위해 spread syntext를 많이 사용한다.
+- 리액트 state에서 객체를 수정할 때, ``input[name] = value``처럼 직접 수정하면 안된다.
+    - 기존 상태를 직접 수정하면 값을 바꿔도 리렌더링이 안된다.
+- 새로운 객체를 만들고 객체에 변화를 주어 state로 사용해주어야한다.
+- 사용법
+    ```
+    setInputs({
+        ...inputs, // 기존 객체 복사
+        [name]: value
+    });
+    ```
+- 불변성을 지켜주는 작업
+    - 불변성을 지킨다 -> 리액트컴포넌트에서 상태 업데이트 감지 -> 리렌더링
+    - 불변성을 지킨다 = 컴포넌트 업데이트 성능 최적화 가능
+- [정리](https://react.vlpt.us/basic/09-multiple-inputs.html)
+    -  리액트에서 객체를 업데이트하게 될 때에는 기존 객체를 직접 수정하면 안되고, 새로운 객체를 만들어서, 새 객체에 변화를 주어야 된다.
+
 # Index
 - 1.useState
 - 2.useEffect
 - 3.useRef
 - 4.useCallback
+- 5.advanced skill
 
 ## 1. useState
 state와 setState를 배열형태로 return해준다. state에는 현재 상태값이 들어있고 setState로 state를 변경할 수 있다
 ### setState
 - state 업데이트를 진행한다.
 - 즉, 리렌더링이 된다.
-
+- setState함수는 비동기라 실행 한 후 state값을 조회할 때 최신 state값의 반환을 보장하지 않는다.
+    - 이전 상태값이 업데이트될 상태값에 영향을 미치는 경우에 setState함수는 prevState를 인자로 받는 콜백을 받아 처리하는것을 권장한다.
 - 변수형 업데이트
 
 - 함수형 업데이트
     - 업데이트 하고 싶은 새로운 값을 파라미터로 넣어주는게 아닌, 기존 값을 어떻게 업데이트 할 지에 대한 함수를 등록하는 방식으로도 값을 업데이트 할 수 있다.
     - 즉, state를 변경할 때 새로변경될 state값이 이전 state 값과 연관이 되어있다면 setState의 인자로 callback 함수를 넣어주는게 좋다.
+    - [불필요한 리렌더링 해결](https://react.vlpt.us/basic/19-React.memo.html)
 ```
 import React, { useState } from 'react';
 
@@ -207,6 +227,14 @@ export default Timer;
         - ``const nextId = { current: 4 };``처럼 쓰면 안될까?
             - 컴포넌트는 그 컴포넌트의 state나 props가 변경될 때마다 호출되는데(re-rendering), 함수형 컴포넌트는 일반 자바스크립트 함수와 마찬가지로 호출될 때마다 함수 내부에 정의된 로컬 변수들을 초기화한다. 하지만, useRef로 만들어진 객체는 React가 만든 전역 저장소에 저장되기 때문에 함수를 재 호출하더라도 마지막으로 업데이트한 current 값이 유지된다. 반면, 변수로 만든 값은 리렌더링시 선언된 값으로 초기화된다.
 
+### 사용법
+1. useRef() 객체 생성
+    - ``const nameInput = useRef();``
+2. 해당 객체를 우리가 선택하고 싶은 DOM 에 ref 값으로 설정
+    - ``<input ref={nameInput}/> ``
+3. Ref 객체의 .current 값은 원하는 DOM 을 가르키게 된다.
+    - ``nameInput.current.focus()``
+
 ## 4. useMemo
 ``const value = useMemo(()=> {function name}, [dependency array])``
 - 성능을 최적화할 때 사용한다.
@@ -221,14 +249,48 @@ export default Timer;
 - 특정함수에 대해 컴포넌트가 리렌더링 될 때마다 새로만들어 지고 한번만든 함수를 필요할 때만 새로 만들고 재사용하고 싶을 때 쓰인다.
     - 컴포넌트에서 props 가 바뀌지 않았으면 Virtual DOM 에 새로 렌더링하는 것 조차 하지 않고 컴포넌트의 결과물을 재사용 하는 최적화 작업하기위해, 함수 재사용은 필수
 
-### 사용법
-1. useRef() 객체 생성
-    - ``const nameInput = useRef();``
-2. 해당 객체를 우리가 선택하고 싶은 DOM 에 ref 값으로 설정
-    - ``<input ref={nameInput}/> ``
-3. Ref 객체의 .current 값은 원하는 DOM 을 가르키게 된다.
-    - ``nameInput.current.focus()``
+## 6. useReducer
+컴포넌트의 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있다. 상태 업데이트 로직을 컴포넌트 바깥에 작성 할 수도 있고, 심지어 다른 파일에 작성 후 불러와서 사용 할 수도 있다.
+- 상태를 업데이트 할 때에는 useState 를 사용해서 새로운 상태를 설정해주는데, 상태를 관리하게 될 때 useState 를 사용하는것 말고도 useReducer를 사용할 수 있다.
 
+### reducer
+reducer 는 **현재 상태**와 **액션 객체**를 파라미터로 받아와서 **새로운(다음) 상태를 반환**해주는 함수이다.
+
+```
+function reducer(state, action) {
+  // 새로운 상태를 만드는 로직
+  // const nextState = ...
+  return nextState;
+}
+```
+- reducer 에서 반환하는 상태는 곧 컴포넌트가 지닐 새로운 상태이다.
+- reducer 함수 안에서 const {변수, 변수, ...} = state로 비구조화할당을 할 수 있다.
+    - const {변수, 변수, ...} = action 또한, 가능하다. 이때, 받아오지않은 값들은 undefined이다.
+
+### useReducer 의 사용법
+``const [state, dispatch] = useReducer(reducer, initialState);``
+- state: 앞으로 컴포넌트에서 사용 할 수 있는 state 객체(object)
+- dispatch: 액션을 발생시키는 함수
+- reducer: reducer 함수
+- initialState: 초기 state
+
+### useReducer vs useState
+상황에 따라 결정한다
+- 컴포넌트에서 관리하는 값이 하나라면 useState
+- 컴포넌트에서 관리하는 값이 여러개가 되어서 상태의 구조가 복잡해진다면 useReducer
+- useState의 seState가 자주 사용된다면 useReducer를 고민
+
+## 7. 커스텀 Hook
+반복되는 로직을 분리하여 쉽게 재사용하기위해 쓰인다.
+- 커스텀 Hooks 를 만들 때에는 보통 use 라는 키워드로 시작하는 파일을 만들고 그 안에 함수를 작성한다.
+- 그 안에서 useState, useEffect, useReducer, useCallback 등 Hooks 를 사용하여 원하는 기능을 구현해주고, 컴포넌트에서 사용하고 싶은 값들을 반환해준다.
+## 999. Advanced skill
+
+### React.memo
+컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을 방지하여 컴포넌트의 리렌더링 성능 최적화를 해주는 함수이다.
+    - 컴포넌트에서 리렌더링이 필요한 상황에서만 리렌더링을 하도록 설정해줄수있다.
+        - 불필요한 렌더링을 줄여준다.
+    - [react dev tools memo test](https://medium.com/wantedjobs/react-profiler%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%84%B1%EB%8A%A5-%EC%B8%A1%EC%A0%95%ED%95%98%EA%B8%B0-5981dfb3d934)
 
 # Ref
 https://www.youtube.com/watch?v=VxqZrL4FLz8

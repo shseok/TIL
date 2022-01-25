@@ -722,5 +722,19 @@ sayHi = null;
 welcome(); // Hello, Guest (중첩 호출이 제대로 동작함)
 ```
 
+# 비구조화 할당 
+[자세히](https://learnjs.vlpt.us/useful/06-destructuring.html)
+
+```
+const animal = {
+  name: '멍멍이',
+  type: '개'
+};
+
+const { name } = animal
+console.log(name);
+```
+- 이처럼 특정한 key의 value를 가져올 수도 있다.
+
 # JS 소괄호 의미
 - https://heecheolman.tistory.com/23

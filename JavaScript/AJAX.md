@@ -93,5 +93,32 @@ Asynchronous JavaScript And XML
 ## CORS 관련 에러
 AJAX요청 사용시 자주보게 되는 에러
 - 이유: 만약 naver.com에서 개발 진행 중, kakao.com으로 ajax 요청 불가능 (보안이슈)
+- 서비스 페이지와 다른 IP의 데이터를 호출할 때, 발생
 - 하지만, 개인이 개발시 상관 x
     - CORS를 끄고 싶으면 서버에 특정 코드를 추가해놓으면 해결가능
+
+- 상황
+    1. 만약 localhost:3000 포트에서 5000 포트로 접근한다고 했을 경우 CORS 이슈가 발생하여 error가 발생한다.
+    2. 클라이언트에서 외부 API서버로 바로 요청을 보내서 CORS발생
+        - 외부 API를 사용하고 있었기 때문에 서버를 제어할 수 없다. 따라서, HTTP응답 헤더인 Access-Control-Allow-Origin을 설정할 수 없다.
+        - 따로, 서버를 구축하기 쉽지 않을 경우
+
+- 해결방법
+    1. 클라이언트 측에서 프록시이용
+        - 데이터를 가져올 때 해당사이트에서 바로 자신의 PC로 가져오는 게 아니라 임시 저장소를 거쳐서 가져오는 것
+        1-1. 남이 만든 프록시 서버 이용
+            - [해당 서버](https://cors-anywhere.herokuapp.com)을 사용하게 되면 중간에 요청을 가로채서 HTTP 응답 헤더에 ``Access-Control-Allow-Origin:*`` 를 설정해서 응답해준다.
+                - 요청해야하는 URL앞에 프록시 서버 URL을 붙여서 요청하는 방식
+        1-2. 직접 프록시 서버 구축
+            - 더이상 클라이언트에서 서버로 요청하는 것이 아니라, 서버에서 서버로 요청할 수 있게 된다.
+            - CORS는 브라우저에 관련된 정책이기 때문에, 브라우저를 통하지 않고 서버 간 통신을 할 때에는 이 정책이 정용되지 않는다.
+            ...
+        1-3. [이후 내용은 해당 페이지에서 확인](https://xiubindev.tistory.com/115#recentEntries)
+        1-4. Webpack DevServer Proxy
+    2. 서버에서 특정 코드 추가
+
+- 도움
+    - [첫번째](https://evan-moon.github.io/2020/05/21/about-cors/)
+    - [두번째](https://developer-talk.tistory.com/91)
+    - [세번째](https://velog.io/@sonwj0915/CORS%EC%99%80-Proxy%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)
+    - [네번째](https://react.vlpt.us/redux-middleware/09-cors-and-proxy.html)

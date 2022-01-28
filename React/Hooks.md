@@ -1,6 +1,8 @@
 # React Hooks
 React Hooks는 **Function Component**안에서만 사용할 수 있다.
 
+## 선학습
+
 💡 react component는 2가지가 존재한다.
 1. FunctionComponent
 2. ClassComponent 
@@ -26,8 +28,27 @@ React Hooks는 **Function Component**안에서만 사용할 수 있다.
 - 불변성을 지켜주는 작업
     - 불변성을 지킨다 -> 리액트컴포넌트에서 상태 업데이트 감지 -> 리렌더링
     - 불변성을 지킨다 = 컴포넌트 업데이트 성능 최적화 가능
-- [정리](https://react.vlpt.us/basic/09-multiple-inputs.html)
+- [도움1](https://react.vlpt.us/basic/09-multiple-inputs.html)
     -  리액트에서 객체를 업데이트하게 될 때에는 기존 객체를 직접 수정하면 안되고, 새로운 객체를 만들어서, 새 객체에 변화를 주어야 된다.
+- [도움2](https://react.vlpt.us/basic/23-immer.html)
+- [immer 라이브러리이용](./라이브러리.md)
+
+💡 onClick, onChange에서 함수를 쓸때 [자바스크립트 함수 return 참고](https://ko.javascript.info/function-expressions)
+1. 함수가 파라미터를 필요로 하지않을 경우
+    ```
+        <button onClick={() => funcName()}>👌
+        <button onClick={() => funcName}>❌
+        <button onClick={funcName}>👌
+        <button onClick={funcName()}>❌
+        <button onClick={()=>{
+            console.log("1234");
+        }}>👌
+    ```
+2. 함수가 파라미터를 필요로 할 경우
+    ```
+        <input onChange={() => funcName(param)}>👌
+    ```    
+    - 함수 이름만 쓴다.
 
 # Index
 - 1.useState
@@ -284,6 +305,19 @@ function reducer(state, action) {
 반복되는 로직을 분리하여 쉽게 재사용하기위해 쓰인다.
 - 커스텀 Hooks 를 만들 때에는 보통 use 라는 키워드로 시작하는 파일을 만들고 그 안에 함수를 작성한다.
 - 그 안에서 useState, useEffect, useReducer, useCallback 등 Hooks 를 사용하여 원하는 기능을 구현해주고, 컴포넌트에서 사용하고 싶은 값들을 반환해준다.
+
+## 8. Context API + dispatch
+특정 함수를 특정 컴포넌트를 거쳐서 원하는 컴포넌트에게 전달하는 작업에서 주로 사용된다.
+-  만약 3~4개 이상의 컴포넌트를 거쳐서 전달을 해야 하는 일이 발생하게 되어 불편하다면, 해당 방법을 통해 프로젝트 안에서 **전역적으로 사용 할 수 있는 값**(함수, 외부 라이브러리 인스턴스, DOM)을 관리 할 수 있다.
+1. Context 생성
+    - ``const UserDispatch = React.createContext(null);``
+2. Provider 컴포넌트로 값을 설정하여 감싸진 컴포넌트 중 어디서든지 조회
+    - ``<UserDispatch.Provider value={dispatch}>...</UserDispatch.Provider>``
+    - 위에 감싸진 컴포넌트는 어디서든지 dispatch를 꺼내 쓸 수 있다.
+3. dispatch조회 후 사용
+    - ``const dispatch = useContext(UserDispatch);``
+    - useContext 라는 Hook 을 사용해서 만든 UserDispatch Context 를 조회 할 수 있다.
+
 ## 999. Advanced skill
 
 ### React.memo

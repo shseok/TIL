@@ -66,3 +66,10 @@
         - ``<button onClick={onToggle}>메뉴</button>``
         - 매개변수가 필요하다면
             - ``<button onClick={() => onToggle(param)}>메뉴</button>``
+10. Uncaught TypeError: dispatch is not a function
+    - 문제점
+        - 외부 파일에서 정의한 useContext를 사용하던 중, 가져오는 과정에서 import방식이 잘못되어 제대로 작동이 못 한것
+        - ``export const UserDispatch = React.createContext(null);`` -> ``import UserDispatch from './App';``❌
+    - 문제해결
+        - ``import { UserDispatch } from './App';`` 👌
+        - [참고](https://ljh86029926.gitbook.io/coding-apple-react/undefined/import-export)

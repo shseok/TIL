@@ -26,10 +26,33 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 
 2. 외부에서 PR
 
-외부에서 PR을 보낼시 원격 저장소에서 conflict가 발생했든 안했든 command line을 본다. develop 브랜치로 변경 후 작업을 진행해준다. ``git pull https://github.com/hyeondevel/sponsor_template.git edit-readme`` 이런 식으로 외부에서 수정 사항을 branch에 가져와 충돌이 난 것이든 아닌 것이든 적용한다. 이때, master 에서 바로 checkout해서 merge해주면 안된다. 반드시 commit 후 checkout이 된다.
-    - error: you need to resolve your current index first 와 같은 error 발생
+외부에서 PR을 보낼시 원격 저장소에서 conflict가 발생했든 안했든 command line을 본다. 
 
-이를 master에서 merge 후 push하면 PR이 merged된 상태가 되어 마무리된다.
+<img src="./img/github2.png" width="752px" height="400">
+
+- step1
+    - ``git checkout -b <new_branch> [<start point>]``
+        - 예시를 참고하자면 PR요청한깃헙 계정을 의미하는 rladuswl-yj로 새로운 브랜치를 만들고 이동
+    - ``git pull <repository> <refspec>``
+        - rladuswl-yj계정에서 work branch인 yj 브랜치의 커밋들을 가져온다.
+        - 이를통해 rladuswl-yj계정이 yj 브랜치를 만들고 그곳에서 작업하여 rladuswl-yj fork repository에 push한 것을 알 수 있다
+- step2
+    - 마스터로 가서 merge
+        - merge한 기록(commit)을 남기지 않고 싶으면 fast forward로 보통 진행하지만, 기록을 남기고 싶다면 --no-ff
+    - 관리자원격에 push하면 비로소 pr merge가 잘 된다.
+
+- 위의 step을 따르지 않고 나의 로직
+    1. 에디터에서 develop 브랜치로 변경 후 작업을 진행해준다. 2. ``git pull https://github.com/hyeondevel/sponsor_template.git edit-readme`` command line step에서 보여주는 pull방식을 이용하여 branch에 가져와 충돌이 난 것이든 아닌 것이든 적용한다. 
+        - 이때, master 에서 바로 checkout해서 merge해주면 안된다. 반드시 commit 후 checkout이 된다. 그렇지 않을경우 아래의error가 발생하였다.
+        - error: you need to resolve your current index first 와 같은 error 발생
+    3.이를 master에서 merge 후 push하면 PR이 merged된 상태가 되어 마무리된다.
+
+💡 관리자가 원격에서 받은 pr에 대해 merge 작업 중, pr을 보낸 계정(팀원)이 pr을 보낸 work branch를 fork repository에서 삭제할 경우 pr이 github에서 closed상태로 변한다. 이때, 관리자가 (에디터에서) 먼저 merge를 진행하고 있는 중이라면 상관없다. 관리자가 정상적으로 merge후 push하면 pr보낸 계정의 수정사항 commit은 정상적으로 포함되기 때문이다. 하지만, 관리자가 pr을 확인하지 못한 상태에서 pr을 보낸 계정이 fork repository의 pr branch를 삭제하게 되면, closed되어 관리자가 merge를 할 수 없는 상황이 된다. 따라서, 관리자가 merge했다고 알림을 주거나 항시 관리자페이지에서 pr section에가서 자신의 pr이 merge되었는지 확인하고 삭제하도록한다
+
+<img src="./img/closed.png" width="752px" height="200">
+
+- pr보낸 work branch를 fork repository에서 삭제하는 방법 
+- 위의 예시에서 ``git push origin --delete yj``
 
 ## 팀원 or PR 이용자
 

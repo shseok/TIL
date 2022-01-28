@@ -1,4 +1,5 @@
 # LifeCycle API
+클래스형 컴포넌트에서만 사용 할 수 있다.
 
 <img src="./img/lifeCycle.png" width="780px" height="450px">
 

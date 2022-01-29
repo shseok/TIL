@@ -34,6 +34,14 @@
     - "Ctrl+D"를 통해 multi-select가 가능하다.
         - 같은 이름 one by one search 후 선택
 
+# 파일 선택, 디렉토리 오픈
+1.파일 선택
+- 현재작업중인 디렉토리의 파일 선택단축키
+    - Ctrl+p
+2.디렉토리 오픈
+- vscode에서 진행한 프로젝트들을 볼 수 있고 선택하면 현재 창을 해당 창으로 오픈
+
+
 ## 화면 close up / down
 - Close Up
     - Ctrl + '+'

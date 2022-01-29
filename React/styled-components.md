@@ -1,1 +1,0 @@
-[자세히](https://www.daleseo.com/react-styled-components/)

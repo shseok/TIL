@@ -1,11 +1,11 @@
-- Computer System
+# Computer System
     - 일반적으로 4가지 요소로 구성
         - User (Human computer Interface ...)
         - Hardware (디지털 회로, 컴퓨터 구조...)
         - Software (운영체제, 데이터베이스, 시스템프로그래밍 ...)
         - Data(Infomation)
 
-- Hardware System 
+## Hardware System 
     - (화살표 중요)
 
         <img src="./img/HW_img.png" alt="HW" width="300" height="190">
@@ -16,7 +16,7 @@
     - Storage Device (HDD, SSD) : 메모리로 옮기고 받는게 모두 가능
     - Input Devices, Output Devices
 
-- Software
+## Software
     - hardware를 잘 쓰기위해 존재
     - System Software (시스템 소프트웨어)
         - OS (윈도우, 유닉스, 리눅스 ...)
@@ -73,13 +73,13 @@
             - User의 컴퓨터 
         - 맥, 우분투에서 터미널을 열 때, shell이 실행됨 = 위노우에서 git-bash를 실행하면 터미널이 열리고 shell실행
 
-- Process와 Processor   
+## Process와 Processor   
     - CPU = Central Processing Unit = **Processor**
         - 실행하고자 하는 명령어는 Storage devices -> Memory로 옮겨져서 CPU가 처리 = **Process, job**
     - Processor가 Process를 처리    
 
 
-- 서버(Server)
+## 서버(Server)
     - 한 컴퓨터가 네트워크로 연결된 다른 하나, 또는 그이상의 컴퓨터들에게 [무엇](#1-detail)을 해주는(serve해주는) 컴퓨터
     
     >> #무엇 : 저장된 글과 사진들을 보여주거나, 반대로 이것들을 업로드 받아서 보관해주거나, 한 컴퓨터가 톡을 보내면 다른 컴퓨터에 알림을 보내거나, 위치와 목적지를 받아서, 가는 길과 소요시간을 계산해주거나, 여럿이 올라인으로 참여할 수 있는 게임을 열어주거나
@@ -92,3 +92,18 @@
         - 외부에서 특정 주소로 접속해 올 수 있도록 설정
         - 단, 컴퓨터를 끄면 서버 다운, 통신의 질, 전기세 폭탄   
     - 따라서 직접 컴퓨터에 설치하지 않고 보통은 IDC의 특정 컴퓨터를 사용하거나 AWS(클라우드 컴퓨팅 서비스)를 이용한다.
+
+## 컴파일 / 빌드 / 배포
+
+- 현실 세계에서의 컴파일, 빌드, 배포
+- 영문 책이 서점에 오기까지의 과정을 예를 들어보자.
+    1. 번역가가 영문으로 된 글을 한글로 번역한다. -> 컴파일
+    2. 출판사에서는 번역된 글을 모아서 한 권의 책으로 엮는다. -> 빌드
+    3. 책을 서점으로 배송해서 원하는 위치에 진열한다. -> 배포
+ 
+- 프로그래밍에서의 컴파일, 빌드, 배포
+    1. 사용자가 작성한 코드를 컴퓨터 언어로 번역한다. -> 컴파일
+    2. 컴파일 된 파일을 실제 실행시킬 수 있는 상태의 파일로 만든다. -> 빌드
+    3. 실행 가능한 파일을 사용자가 접근할 수 있는 환경에 배치한다. -> 배포
+
+* 1~2의 과정을 포함시켜 '빌드' 라고 표현하기도 한다.

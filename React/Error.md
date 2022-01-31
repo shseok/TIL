@@ -73,3 +73,7 @@
     - 문제해결
         - ``import { UserDispatch } from './App';`` 👌
         - [참고](https://ljh86029926.gitbook.io/coding-apple-react/undefined/import-export)
+
+11. JSX expressions must have one parent element
+    - JSX 표현식에는 하나의 상위 요소가 있어야 한다
+    - 즉, 여러 요소가 있을 땐 부모 요소 하나로 감싸야 한다.

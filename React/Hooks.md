@@ -311,7 +311,7 @@ function reducer(state, action) {
 -  만약 3~4개 이상의 컴포넌트를 거쳐서 전달을 해야 하는 일이 발생하게 되어 불편하다면, 해당 방법을 통해 프로젝트 안에서 **전역적으로 사용 할 수 있는 값**(함수, 외부 라이브러리 인스턴스, DOM)을 관리 할 수 있다.
 1. Context 생성
     - ``const UserDispatch = React.createContext(null);``
-2. Provider 컴포넌트로 값을 설정하여 감싸진 컴포넌트 중 어디서든지 조회
+2. Provider 컴포넌트로 값을 설정하여 **감싸진 컴포넌트 중 어디서든지 조회**
     - ``<UserDispatch.Provider value={dispatch}>...</UserDispatch.Provider>``
     - 위에 감싸진 컴포넌트는 어디서든지 dispatch를 꺼내 쓸 수 있다.
 3. dispatch조회 후 사용

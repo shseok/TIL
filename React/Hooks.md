@@ -54,8 +54,12 @@ React Hooks는 **Function Component**안에서만 사용할 수 있다.
 - 1.useState
 - 2.useEffect
 - 3.useRef
-- 4.useCallback
-- 5.advanced skill
+- 4.useMemo
+- 5.useCallback
+- 6.useReducer
+- 7.커스텀Hook
+- 8.Context API + dispatch
+- 99.advanced skill
 
 ## 1. useState
 state와 setState를 배열형태로 return해준다. state에는 현재 상태값이 들어있고 setState로 state를 변경할 수 있다
@@ -285,6 +289,7 @@ function reducer(state, action) {
 }
 ```
 - reducer 에서 반환하는 상태는 곧 컴포넌트가 지닐 새로운 상태이다.
+    - dispatch에 의해 reducer의 type에 따라 상태가 반환될 때마다 rerender가 발생한다.
 - reducer 함수 안에서 const {변수, 변수, ...} = state로 비구조화할당을 할 수 있다.
     - const {변수, 변수, ...} = action 또한, 가능하다. 이때, 받아오지않은 값들은 undefined이다.
 

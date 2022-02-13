@@ -77,3 +77,13 @@
 11. JSX expressions must have one parent element
     - JSX 표현식에는 하나의 상위 요소가 있어야 한다
     - 즉, 여러 요소가 있을 땐 부모 요소 하나로 감싸야 한다.
+
+12. Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
+    - 문제점
+        - 함수를 return값으로 사용하려 시도했을 때, 발생한 에러이다. 기존 버튼을 눌렀을 때, 함수 실행을 목적으로 하였으나 JSX를 쓰지않고 함수 바로 사용하여 반환하였다.
+    - 문제해결
+        - 함수반환을 JSX표현식으로 소괄호로 닫아 Button을 누르면 함수가 실행되도록 해결해주었다.
+
+
+
+🧨 다른 계정으로 크롬 브라우저를 실행하고 있을 때, 간혹 특정계정에서 개발모드로 진행하고 있을 경우 console.log가 안찍히는 경우가 있음

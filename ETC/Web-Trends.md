@@ -35,6 +35,9 @@
     2. Low SEO(Search Engine Optimizaition)
         - CSR에서 사용되어지는 HTML의 body는 대부분 empty상태이기때문에 검색 엔진들이 CSR로 작성딘 웹페이지를 분석하는데 어려움을 겪는다.
 
+- 해결
+    - [코드 스플리팅](https://velog.io/@kyj2471/Code-Splitting)과 서버사이드 렌더링
+
 ## SSR (Server Side Rendering)
 CSR의 과도한 문제점으로 인해 과거 static stites에 영감을 받아 출현
 - 클라이언트 측에서 모두 처리하는 것과 달리, 웹사이트 접속시 서버에서 필요한 데이터를 모두 가져와서 HTML파일을 만들고 동적으로 조금 제어할 수 있는 소스 코드와 함께 클라이언트에 보내진다. 이렇게하면 클라이언트 측에서 바로 볼 수 있다.

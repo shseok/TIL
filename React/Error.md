@@ -84,6 +84,13 @@
     - 문제해결
         - 함수반환을 JSX표현식으로 소괄호로 닫아 Button을 누르면 함수가 실행되도록 해결해주었다.
 
-
+13. CORS관련 에러  
+    - 1. json-server이용시 에러
+        - 문제점
+            - proxy와 axios URL 요청을 수정후 개발서버를 다시시작했을 때, 데이터를 받지 못하는 현상이 발생하였다.
+        - 문제해결
+            - [링크](https://stackoverflow.com/questions/48291950/proxy-not-working-for-react-and-node)의 도움을 받아 해결하였는데, 캐쉬문제라고 한다. 따라서 package-lock.json과 node-module을 삭제후 npm install을 해주었더니 해결되었다.
+    - 참고
+        - [CRA에서 Proxy 설정하기](https://biio-studying.tistory.com/238)
 
 🧨 다른 계정으로 크롬 브라우저를 실행하고 있을 때, 간혹 특정계정에서 개발모드로 진행하고 있을 경우 console.log가 안찍히는 경우가 있음

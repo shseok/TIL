@@ -23,3 +23,23 @@
     
 - 텍스트
     - 구글의 웹폰트 지원 (키보드 위아래로 변경가능)
+
+- 펜툴
+
+## component
+- 버튼: 직사각형 + 텍스트를 그룹화하여 컴포넌트화 시킨다. 
+    - 등록된 컴포넌트를 끌어다가 복사본으로 만들어서 사용할 수 있는데, 기존 컴포넌트의 스타일이 바뀌면 복사본들이 적용된다.
+    - tip: original 컴포넌트는 frame 밖에 두고 이 후 복사본을 메뉴에서 끌어다가 쓰며 차후에 original 수정사항 발생시 original만 바꾸어 쉽게 모두 변경가능하다
+    - 텍스트는 도형의 최대 넓이까지 만들고 text부분에서 align center를 해준다.
+
+
+## history
+
+## font awesome을 figma에서 사용하기
+[text section에 font awesome이 적용되지 않아 붙여넣기가 안되는 경우 해결방법](https://help.figma.com/hc/en-us/articles/360040449513-Add-icons-to-text-layers-with-icon-fonts)
+    - solid한 디자인를 복사했다면 figma에서도 text의 solid를 설정해줘야한다.
+# 단축키 정리
+1. ctrl + g
+2. shift
+3. alt
+4. ctrl +, ctrl - : 확대 / 축소

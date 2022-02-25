@@ -35,11 +35,21 @@
 
 ## history
 
+
 ## font awesome을 figma에서 사용하기
 [text section에 font awesome이 적용되지 않아 붙여넣기가 안되는 경우 해결방법](https://help.figma.com/hc/en-us/articles/360040449513-Add-icons-to-text-layers-with-icon-fonts)
     - solid한 디자인를 복사했다면 figma에서도 text의 solid를 설정해줘야한다.
+
+## figma mirror (for phone)
+figma에서 작성한 frame들을 휴대폰에서도 시연해볼 수 있는 방법
+
+## figma template
+- 디자인 감각을 기를 수 있기 좋은 [피그마 커뮤니티](https://www.figma.com/community)
+- google search (ex. figma iphone 8 template)
+
 # 단축키 정리
 1. ctrl + g
 2. shift
 3. alt
 4. ctrl +, ctrl - : 확대 / 축소
+5. space누르고 마우스로 클릭하여 움직이기

@@ -42,8 +42,10 @@
 - 아주 큰 숫자를 저장할 수 있는 BigInt형
 - 문자열을 저장하는 데 쓰이는 문자형
 - 논리값 true/false을 저장하는 데 쓰이는 불린형
-- ‘비어있음’, '존재하지 않음’을 나타내는 null 값만을 위한 독립 자료형 null
-- 값이 할당되지 않은 상태를 나타내는 undefined 값만을 위한 독립 자료형 - undefined
+- null: ‘비어있음’, '존재하지 않음’을 나타내는 null 값만을 위한 독립 자료형
+    - "이 값이 없어!" - 고의적
+- undefined: 값이 할당되지 않은 상태를 나타내는 undefined 값만을 위한 독립 자료형
+    - "변수를 선언했지만 값을 지정해주지 않았다"
 - 복잡한 자료구조를 저장하는 데 쓰이는 객체형과 고유한 식별자를 만들 때 사용되는 심볼형
 
 typeof 연산자는 값의 자료형을 반환해준다. 그런데 두 가지 예외 사항이 있다.
@@ -290,6 +292,8 @@ let ladder = {
 ladder.up().up().down().up().down().showStep(); // 1
 ```
 
+📌 화살표 함수를 객체안에서 쓰면 this의 효력이 무효화된다.
+
 ## new 연산자와 생성자 함수
 'new' 연산자와 생성자 함수를 사용하면 유사한 객체 여러 개를 쉽게 만들 수 있다.
 - 함수 이름의 첫 글자는 대문자로 시작
@@ -359,6 +363,23 @@ console.log( user?.address?.street ); // undefined
 
 - push와 pop은 빠르지만 shift와 unshift는 느리다
 - 배열에 **for..in**을 사용하면 문제가 발생하므로 되도록 다른 반복문을 사용하자.
+    📌 배열에 for...of 사용 / 객체에 for...in 사용
+    - 추가로 객체의 정보를 배열형태로 받아올 수 있는 함수 : Object.entries(obj) / Object.keys(obj) / Object.values(obj)
+        - Object.entries : [[키, 값], [키, 값]]
+        - Object.keys : [키, 키, 키]
+        - Object.values : [값, 값, 값]
+    - for...in : 객체의 key를 이용
+    ```
+        const doggy = {
+            name: '멍멍이',
+            sound: '멍멍',
+            age: 2
+        };
+
+        for (let key in doggy) {
+            console.log(`${key}: ${doggy[key]}`);
+        }
+        ```
 - length 프로퍼티는 배열 내 요소의 개수가 아니라 가장 큰 인덱스에 1을 더한 값
 - arr.length = 0;을 사용해 아주 간단하게 배열을 비울 수 있다.
 - 배열엔 toString 메서드가 구현되어 있어 배열을 출력하면 쉼표로 구분한 문자열이 반환된다.
@@ -635,6 +656,12 @@ let user = {
 
 user.sayHi(); // 보라
 ```
+
+## Getter & Setter
+[getter setter in ES6](https://mygumi.tistory.com/161)
+- 특정 값을 바꾸려고 하거나, 특정 값을 조회하려고 할 때 우리가 원하는 코드를 실행 시킬 수 있기 위해 쓰인다
+    - getter: 특정 값을 조회 할 때, get키워드가 붙은 설정을 한 함수로 연산된 값을 반환받는다
+    - setter: 특정 값을 바꾸려고 할 때, set키워드가 붙은 설정을 한 함수로 연산된 값을 반환받는다
 # 클로저
 - 정의: 외부 변수를 기억하고 이 외부 변수에 접근할 수 있는 함수를 의미한다
 - 자바스크립트에선 모든 함수가 자연스럽게 클로저가 된다

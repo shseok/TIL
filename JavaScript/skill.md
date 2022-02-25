@@ -1,4 +1,45 @@
-- array clone - copy
+# 논리계산법
+## && 연산자로 코드 단축
+```
+    const dog = {
+        name: '멍멍이'
+    };
+
+    function getName(animal) {
+        return animal && animal.name;
+    }
+
+    const name = getName(); // <- dog가 전달되면 아래에 멍멍이가 출력된다.
+    console.log(name); // undefined
+```
+### Tip
+```
+console.log(true && 'hello'); // hello
+console.log(false && 'hello'); // false
+console.log('hello' && 'bye'); // bye
+console.log(null && 'hello'); // null
+console.log(undefined && 'hello'); // undefined
+console.log('' && 'hello'); // ''
+console.log(0 && 'hello'); // 0
+console.log(1 && 'hello'); // hello
+console.log(1 && 1); // 1
+```
+## || 연산자로 코드 단축
+어떤 값이 Falsy 하다면 대체로 사용 할 값을 지정해줄 때 쓰인다.
+```
+const namelessDog = {
+  name: ''
+};
+
+function getName(animal) {
+  const name = animal && animal.name;
+  return name || '이름이 없는 동물입니다.';
+}
+
+const name = getName(namelessDog);
+console.log(name); // 이름이 없는 동물입니다.
+```
+# array clone - copy
     - ex) let clone = arr.slice();
     - ex) let clone = [...arr];
 # 배열 메서드(map, filter, forEach ...)의 매개변수(func) 호출 방법
@@ -203,3 +244,10 @@ Array.from(map.keys());
 
 # ()와 {} 사용시 주의할 점
 [자세히](https://velog.io/@bigbrothershin/JavaScript-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%99%80-%EC%82%AC%EC%9A%A9%EC%83%81-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
+
+# velopert에게 얻은 팁
+1. [switch문 return](https://learnjs.vlpt.us/useful/05-smarter-conditions.html)
+    - 추가로 마지막 예제에서 task[animal]의 true false 검사 중 왜 실행되지 않는 의문 -> 함수 그자체를 의미하기 때문 -> task[animal]()을 해야 실행한다
+2. [비구조화 할당 실전](https://learnjs.vlpt.us/useful/06-destructuring.html)
+    - 비구조화 할당할 이름이 다르다면 :문자를 사용해서 이름을 바꿔준다.
+    - 깊은 값 비구조화 할당

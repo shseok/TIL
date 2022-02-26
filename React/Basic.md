@@ -72,6 +72,7 @@ package.json : 설치한 라이브러리 목록(이름, 버전)을 모아놓는 
 # HTML대신 JSX
 JSX 👍
 - 리액트 컴포넌트에서 xml 형식의 값을 반환해는 것. 리액트 컴포넌트 파일에서 XML 형태로 코드를 작성하면 babel 이 JSX 를 JavaScript 로 변환을 해준다.
+    - [JSX와 Babel](https://www.daleseo.com/react-jsx/)
 - return (...)
 - return 소괄호 내부에서 활용된다.
 📌 return문 같은 행에 아무것도 적지 않는다면 소괄호를 넣어주어야한다.
@@ -403,6 +404,36 @@ React.useEffect(effet:()=>{
 
 ## 배열에 항목 추가하기, 제거하기 , 수정하기
 - set함수를 사용할 때, spread or concat함수로 state를 set해야한다
+
+
+# 까먹기 쉬운 개념
+- true 는 자바스크립트 값이기 때문에 중괄호로 감싸주어 props에 넘겨줄 수 있다.
+-  JSX 에서 null, false, undefined 를 렌더링하게 된다면 아무것도 나타나지 않게 된다.
+- 보통 삼항연산자를 사용한 조건부 렌더링을 주로 특정 조건에 따라 보여줘야 하는 내용이 다를 때 사용하는데, 내용이 달라지는게 아니라, 단순히 특정 조건이 true 이면 보여주고, 그렇지 않다면 숨겨주고 있는상황에서는 && 연산자를 사용해서 처리하는 것이 더 간편하다.
+- props 값 설정을 생략하면 ={true}로 인식된다.
+- 리액트에서 엘리먼트에 이벤트를 설정해줄때에는 ``on이벤트이름={실행하고싶은함수}`` 형태로 설정해주어야한다. 함수를 실행시키는게 아닌 함수형태를 넣자!
+- useState : 파라미터를 넣어주는게 아닌 함수를 등록하는 경우 함수형 업데이트라고 하며 이는 최적화시 사용된다.
+- input 의 개수가 여러개가 됐을 때, 좋은 방법은, input 에 name 을 설정하고 이벤트가 발생했을 때 이 값을 참조하는 것이고 useState 에서는 문자열이 아니라 객체 형태의 상태를 관리해주는 것이다.
+- 리액트 상태에서 객체를 수정해야 할 때에는, 직접수정하면 안된다.
+    - 새로운 객체를 만들어서 새로운 객체에 변화를 주고, 이를 상태로 사용해주어야한다.
+        ```
+            inputs[name] = value; ❌
+
+
+            setInputs({
+                ...inputs,
+                [name]: value
+            }); 👌
+        ```
+        - [불변성을 지킨다](https://react.vlpt.us/basic/09-multiple-inputs.html)
+        - 정리: 리액트에서 객체를 업데이트하게 될 때에는 기존 객체를 직접 수정하면 안되고, 새로운 객체를 만들어서, 새 객체에 변화를 주어야한다.
+- useRef: Ref객체를 만들고 선택하고 싶은 DOM에 ref 값으로 설정해주면 ``.current``값은 원하는 DOM을 가르킨다. (input의 e.target가 같다. e.target도 원하는 DOM을 가르킴)
+    - useRef로 관리하는 변수 용도
+    - setTimeout, setInterval 을 통해서 만들어진 id
+    - 외부 라이브러리를 사용하여 생성된 인스턴스
+    - scroll 위치
+- useRef 대신 const 변수를 쓰면 안되는가?
+    - 답변: 컴포넌트는 그 컴포넌트의 state나 props가 변경될 때마다 호출되는데(re-rendering), 함수형 컴포넌트는 일반 자바스크립트 함수와 마찬가지로 호출될 때마다 함수 내부에 정의된 로컬 변수들을 초기화한다. 따라서 ``const nextId = { current: 4 };`` nextId.current는 함수가 호출될 때마다 4이다. 반면 useRef로 만들어진 객체는 React가 만든 전역 저장소에 저장되기 때문에 함수를 재 호출하더라도 마지막으로 업데이트한 current 값이 유지된다.
 # ref
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html

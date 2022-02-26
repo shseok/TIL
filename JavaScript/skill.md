@@ -245,9 +245,23 @@ Array.from(map.keys());
 # ()와 {} 사용시 주의할 점
 [자세히](https://velog.io/@bigbrothershin/JavaScript-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%99%80-%EC%82%AC%EC%9A%A9%EC%83%81-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
 
-# velopert에게 얻은 팁
+# velopert modern js에서 얻은 개념과 팁
 1. [switch문 return](https://learnjs.vlpt.us/useful/05-smarter-conditions.html)
     - 추가로 마지막 예제에서 task[animal]의 true false 검사 중 왜 실행되지 않는 의문 -> 함수 그자체를 의미하기 때문 -> task[animal]()을 해야 실행한다
 2. [비구조화 할당 실전](https://learnjs.vlpt.us/useful/06-destructuring.html)
     - 비구조화 할당할 이름이 다르다면 :문자를 사용해서 이름을 바꿔준다.
     - 깊은 값 비구조화 할당
+3. [spread & rest](https://learnjs.vlpt.us/useful/07-spread-and-rest.html)
+    - spread : 배열, 객체의 값들을 펼칠 수 있다.
+    - rest: 배열, 객체, 함수의 파라미터에서 사용된다.
+        - 함수의 파라미터가 몇개가 될 지 모르는 상황에서 유용하다.
+
+4. [html & js](https://learnjs.vlpt.us/html/)
+    - 사용자의 인터렉션이 많은 경우 vanilla JS를 사용하기에는 코드의 양도 많아지고 코드관리도 어려운편이어서 보통 React, Vue, Angular와 같은 프레임워크/라이브러리를 사용한다
+    - DOM: 각 태그에 대한 정보를 지니고 있는 JS객체
+5. [비동기 작업](https://learnjs.vlpt.us/async/)
+    - Ajax Web API request: 서버쪽에서 데이터를 받와아야 할 때는, 요청을 하고 서버에서 응답을 할 때 까지 대기를 해야 되기 때문에 작업을 비동기적으로 처리된다.
+    - 파일 읽기: 서버 쪽에서 파일을 읽어야 하는 상황에는 비동기적으로 처리한다.
+    - 암호화/복호화: 암호화/복호화를 할 때에도 바로 처리가 되지 않고, 시간이 어느정도 걸리는 경우가 있기 때문에 비동기적으로 처리한다.
+    - 작업 예약: 단순히 어떤 작업을 몇초 후에 스케쥴링 해야 하는 상황에는, setTimeout 을 사용하여 비동기적으로 처리한다.
+    - async/await : 함수에서 async 를 사용하면, 해당 함수는 결과값으로 Promise 를 반환하게 된다. 반환된 값으로 .then을 사용하여 이용가능

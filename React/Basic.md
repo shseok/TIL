@@ -458,6 +458,12 @@ React.useEffect(effet:()=>{
             - 함수를 재사용하는건 나중에 컴포넌트를 재사용할 때, 영향을 미칠 수 있으므로 중요 (컴포넌트 렌더링 최적화 작업을 해주어야 비로소 성능 최적화)
             - 함수 안에서 사용하는 상태 혹은 props 가 있다면 꼭, deps 배열안에 포함요구
         - React.memo: 컴포넌트의 props 가 바뀌지 않았다면, 리렌더링을 방지하여 컴포넌트의 리렌더링 성능 최적화
+- useReducer : 상태 업데이트(like useState) 로직 분리
+    - 상태 업데이트 로직을 컴포넌트에서 분리 (컴포넌트 밖 | 다른 파일)
+    - reducer : 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태(컴포넌트가 지닐 새로운 상태)를 반환해주는 함수
+    - useReducer vs useState
+        - 컴포넌트 내에서 관리하는 상태(단순한 숫자, 문자열, boolean)가 하나라면 useState / 관리하는 상태가 많으면 useReducer
+        - 즉, setState를 많이 사용하게 되다면 useReducer사용 고려
 # Ref
 - https://react.vlpt.us/
 - https://ko.reactjs.org/docs/hooks-state.html

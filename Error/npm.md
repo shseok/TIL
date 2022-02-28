@@ -14,6 +14,9 @@
     3. npm install (package.json과 node-modules 설치)
     4. npm run build 성공
 
+3. update for windows
+- 해결방법 : [짜잔](https://binit.tistory.com/8)
+
 
 # yarn 에러
 1. info There appears to be trouble with your network connection. Retrying... 
@@ -34,3 +37,6 @@ error Found incompatible module.
     - 미해결: node를 업데이트해야하는데 오류발생. 재설치 진행하려고 했지만, 폴더경로에 한글이 있기 때문에 중단.
         - [도움](https://question0.tistory.com/41)
         - [도움](https://manition.tistory.com/31)
+
+# npm update
+[]()

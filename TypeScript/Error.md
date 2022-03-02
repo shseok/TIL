@@ -33,3 +33,7 @@ Module not found: Error: Can't resolve './App' in 'D:\React\study\begin-react\sr
   ]
 }
 ```
+
+# 배열 내장함수인 reduce() 사용시 intialValue를 object로 했을 경우 오류
+- [타입 단언으로 해결](https://www.reddit.com/r/typescript/comments/bfkncu/when_using_arrayreduce_and_the_initial_value_is/)
+  - 추가로 spread로도 해결했다. (D:\React\study\begin-react\hooks tsx파일)

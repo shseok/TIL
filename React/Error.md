@@ -94,3 +94,9 @@
         - [CRA에서 Proxy 설정하기](https://biio-studying.tistory.com/238)
 
 🧨 다른 계정으로 크롬 브라우저를 실행하고 있을 때, 간혹 특정계정에서 개발모드로 진행하고 있을 경우 console.log가 안찍히는 경우가 있음
+
+14. Hooks 함수 components바깥에 사용해서 에러
+    - 문제점
+        - useCallback으로 감싼 event 함수를 함수 바깥에 빼서 에러발생
+    - 문제해결
+        - components안에 넣어서 해결

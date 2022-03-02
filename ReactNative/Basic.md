@@ -1,4 +1,6 @@
 # 설치
+- 설치하기 앞서 react native를 개발하는데 2가지 방식이 존재한다. ([expo cli 방식vs react native cli 방식](https://velog.io/@wook4506/React-Native-Expo-CLI%EC%99%80-React-Native-CLI))
+    - 아래의 내용은 expo 방식 기준이다.
 1. [expo](https://reactnative.dev/docs/environment-setup)
 2. [android studio](https://developer.android.com/studio)
     - 설치시 SDK Components Setup에서 설치경로에 한글이 있어서 에러

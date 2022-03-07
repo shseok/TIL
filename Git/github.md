@@ -102,3 +102,10 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 3. password에 github에서 발급받은 token을 넣어준다 
 4. morror repository 버튼 클릭 후 새로고침 버튼 클릭하면 github에 gitlab의 모든 정보(commit 포함)들이 올라간다
 - [자세히](https://worldforest9.tistory.com/287)
+
+# github에서 수정 후 pull이 아닌 fetch로 가지고 오기 (fetch의 유용성)
+- 1.[fetch & branch -r & fetch내역](https://chaeyoung2.tistory.com/43)
+    - fetch는 원격저장소에서 파일을 병합하기 전에 병합을 할지 말지 **확인**을 할수 있는 명령어이다.
+    - [git branch 옵션](https://jistol.github.io/vcs/2017/01/27/git-branch/)
+        - git branch -r : 원격 저장소의 브랜치 명을 볼 수 있다.
+- 2.[fetch & pull, pull은 이제 그만](https://merrily-code.tistory.com/124) 

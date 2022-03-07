@@ -74,3 +74,14 @@
         - 파라미터) controller: 스크롤 위치 감시가 가능하다.
         - 메모리 절약기능이 있다.
             - 현재 보고 있는 위치의 위젯을 제외한 이전과 이후의 위젯들을 메모리에서 삭제하는 기능이 있다.
+
+# 6. statelessWidget & statefullWidget
+[도움](https://velog.io/@dosilv/Flutter-StatelessWidget-StatefulWidget)
+
+# 7. private 변수, private 메소드(_변수명, 메소드명)
+다트에서는 private 변수, 메소드가 클래스 안에서 감춰지는게 아니라 **파일단위로** 감춰진다.
+    - 다른 파일에서 private 변수,메소드가 있는 클래스를 불러오면 private 변수,메소드를 가져올 수 없다.
+
+
+# 7. 앱소셜 로그인 등 flutter 참고 도움 사이트
+- [1](https://velog.io/@dosilv)

@@ -7,3 +7,18 @@
     - [환경변수 추가로 해결](https://sohees.com/192/)
         - 단, 환경변수 4개중 sdk 2개 삭제하니까 해결
         - 아직 해결 x 
+
+
+## 실행 중
+### 3. Error: Cannot run with sound null safety
+in vscode Debug console
+```
+Error: Cannot run with sound null safety, because the following dependencies
+don't support null safety:
+
+ - package:english_words
+
+```
+- 문제: null safety 가 없는 기존 package 들을 최신 flutter, dart 개발 환경에서 사용할때 방생
+- 해결: [1](https://calvinjmkim.tistory.com/66), [2](https://jeremyko.blogspot.com/2021/04/flutter-using-mixed-null-safety-for.html)
+    - 빌드명령시에도.. 

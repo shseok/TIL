@@ -22,3 +22,7 @@ don't support null safety:
 - 문제: null safety 가 없는 기존 package 들을 최신 flutter, dart 개발 환경에서 사용할때 방생
 - 해결: [1](https://calvinjmkim.tistory.com/66), [2](https://jeremyko.blogspot.com/2021/04/flutter-using-mixed-null-safety-for.html)
     - 빌드명령시에도.. 
+
+### 4. Flutter 1.9: D/skia (16355): Shader compilation error
+- 문제: ? 에뮬레이터와 플루터 버전이 달라서?
+- 해결: [1](https://stackoverflow.com/questions/58380329/flutter-1-9-d-skia-5106-shader-compilation-error)

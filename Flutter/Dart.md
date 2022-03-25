@@ -256,7 +256,7 @@ Dart에서 이용하는 OOP! 마찬가지로 내가 까먹을 것만 정리하�
     - ex)
       ```
       void main(){
-          Human human = Human('현석', ['원호', '홍중']);
+          Friends human = Friends('현석', ['원호', '홍중']);
         }
 
         class HumanInterface{
@@ -275,7 +275,7 @@ Dart에서 이용하는 OOP! 마찬가지로 내가 까먹을 것만 정리하�
           void sayName(){'안녕하세여'};
         }
       ```
-  - 보통 인스턴스는 인스턴스화할 수 있는 class가 아니다.
+  - 보통 인터페이스는 인스턴스화할 수 있는 class가 아니다.
     - 이때, 인스턴스화를 막기위해 abstract 키워드 사용
       - ex)
         ```

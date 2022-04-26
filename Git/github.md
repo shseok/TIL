@@ -114,3 +114,7 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
   - [git branch 옵션](https://jistol.github.io/vcs/2017/01/27/git-branch/)
     - git branch -r : 원격 저장소의 브랜치 명을 볼 수 있다.
 - 2.[fetch & pull, pull은 이제 그만](https://merrily-code.tistory.com/124)
+
+# github action을 통한 TIL README file 자동화
+
+- [참고](https://intrepidgeeks.com/tutorial/github-action-simplifies-the-automation-of-til-readme-updates)

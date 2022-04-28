@@ -51,12 +51,15 @@ don't support null safety:
 - 해결: emulator를 끈 후 flutter pub get
 
 ### 6. Unhandled Exception: Converting object to an encodable object failed: Instance of 'Todo'
+
 - 문제
-    - 데이터 create(post) 할 때, tojson을 주석처리했기때문이다. 객체를 인식할 수 없다는 의미
+  - 데이터 create(post) 할 때, tojson을 주석처리했기때문이다. 객체를 인식할 수 없다는 의미
 - 해결
-    - tojson을 주석해제하여 해결
+  - tojson을 주석해제하여 해결
+
 ### 7. Incorrect use of ParentDataWidget.
+
 - 문제
-    - Expanded내부에 Expanded를 또 주었기 때문
+  - Expanded내부에 Expanded를 또 주었기 때문
 - 해결
-    - 내부 Expanded를 없앰
+  - 내부 Expanded를 없앰

@@ -63,3 +63,10 @@ don't support null safety:
   - Expanded내부에 Expanded를 또 주었기 때문
 - 해결
   - 내부 Expanded를 없앰
+
+### 8. Unhandled Exception: setState() or markNeedsBuild() called during build.
+
+- 문제
+  - initState / didChangeDependencides와 같은 lifecycle의 단계에서 provider의 값을 바꿔주었기 때문이다.
+- 해결
+  - build단계에서 read를 활용하여 값을 바꿔줘야한다.

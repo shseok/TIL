@@ -73,7 +73,7 @@
 
 [도움](https://velog.io/@dosilv/Flutter-StatelessWidget-StatefulWidget)
 
-# 7. private 변수, private 메소드(\_변수명, 메소드명)
+# 7. private 변수, private 메소드(변수명, 메소드명)
 
 다트에서는 private 변수, 메소드가 클래스 안에서 감춰지는게 아니라 **파일단위로** 감춰진다. - 다른 파일에서 private 변수,메소드가 있는 클래스를 불러오면 private 변수,메소드를 가져올 수 없다.
 
@@ -102,3 +102,5 @@
     - GestureDetector 위젯으로 감싼 후 onTap함수에  ``FocusScope.of(context).unfocus();``를 추가해준다.
 
 ## 9-4. 원하는 페이지 한정 키보드 제한하는 방법
+
+## 10. [플러터 프로젝트를 안드로이드 apk 파일로 빌드하기](https://bebesoft.tistory.com/2?category=885335)

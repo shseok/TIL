@@ -70,3 +70,35 @@ don't support null safety:
   - initState / didChangeDependencides와 같은 lifecycle의 단계에서 provider의 값을 바꿔주었기 때문이다.
 - 해결
   - build단계에서 read를 활용하여 값을 바꿔줘야한다.
+
+### 9. Flutter: "RenderFlex children have non-zero flex but incoming height constraints are unbounded"
+
+- [참고](https://stackoverflow.com/questions/57803737/flutter-renderflex-children-have-non-zero-flex-but-incoming-height-constraints)
+
+### 10. Null check operator used on a null value
+
+- 문제
+
+  - ```
+    String? foo; // Nullable String
+
+    void main() {
+      var len = foo!.length; // Runtime error: Null check operator used on a null value
+    }
+    ```
+
+- 해결
+  - 1. ```
+       var f = foo;
+       if (f != null) {
+         var len = f.length; // Safe
+       }
+       ```
+  - 2. ```
+       var len = foo?.length ?? 0; // Provide a default value if foo was null.
+       ```
+- [도움](https://stackoverflow.com/questions/64278595/null-check-operator-used-on-a-null-value)
+
+### 11. Vertical viewport was given unbounded height
+
+- [Column내 ListView를 사용했을 때 방생했던 에러](Vertical viewport was given unbounded height)

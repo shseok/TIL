@@ -118,3 +118,7 @@ master로 develop 브랜치를 merge할 것이므로 step2를 진행해준다. �
 # github action을 통한 TIL README file 자동화
 
 - [참고](https://intrepidgeeks.com/tutorial/github-action-simplifies-the-automation-of-til-readme-updates)
+
+# git master branch에서 push 못하게 설정
+
+- [참고](https://hong-dev.github.io/bftest/master_branch/)

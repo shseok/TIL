@@ -16,6 +16,7 @@
      - api crud
      - directory structure
      - general provider파일에서 repository의 future들을 넘겨주는 방식
+4. [Riverpod 사용해보기 #1](https://prod.velog.io/@leeeeeoy/Flutter-Riverpod-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-1)
 
 ## 해결 한 고민들
 

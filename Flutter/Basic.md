@@ -104,3 +104,7 @@
 ## 9-4. 원하는 페이지 한정 키보드 제한하는 방법
 
 ## 10. [플러터 프로젝트를 안드로이드 apk 파일로 빌드하기](https://bebesoft.tistory.com/2?category=885335)
+
+## 11. 배경 이미지 적용하는 방법
+
+- [크게 2가지로 나뉜다.](https://terry1213.github.io/flutter/flutter-how-to-set-background-image/)

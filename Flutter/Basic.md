@@ -108,3 +108,35 @@
 ## 11. 배경 이미지 적용하는 방법
 
 - [크게 2가지로 나뉜다.](https://terry1213.github.io/flutter/flutter-how-to-set-background-image/)
+
+## 12. [레이아웃 위젯 목록](https://bsscco.github.io/posts/flutter-layout-widgets/)
+
+적절한 예시로 도움이 된다.
+
+1. Row
+2. Column
+3. Flex
+4. Stack
+5. IndexedStack
+6. GridView
+7. ListView
+8. Table
+9. PageView
+10. Wrap
+11. LayoutBuilder
+12. Expanded
+13. Flexible
+14. IntrinsicHeight
+15. Aligned
+16. Positioned
+17. Container
+18. Padding
+19. Center
+20. FittedBox
+21. Transform
+22. RatatedBox
+23. FractionalTranslation
+24. AspectRatio
+25. ConstrainedBox
+26. UnconstrainedBox
+27. SizedBox

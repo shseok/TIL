@@ -140,3 +140,10 @@
 25. ConstrainedBox
 26. UnconstrainedBox
 27. SizedBox
+
+## 13. [뒤로가기 버튼 누를 시 확인 팝업 실행](https://www.kindacode.com/article/flutter-ask-for-confirmation-when-back-button-pressed/)
+
+
+## 14. [timer vs ticker](https://codewithandrea.com/articles/flutter-timer-vs-ticker/)
+
+## 15. [Dart에서의 future / async & await](https://velog.io/@jintak0401/FlutterDart-%EC%97%90%EC%84%9C%EC%9D%98-Future-asyncawait)

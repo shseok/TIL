@@ -102,3 +102,8 @@ don't support null safety:
 ### 11. Vertical viewport was given unbounded height
 
 - [Column내 ListView를 사용했을 때 방생했던 에러](Vertical viewport was given unbounded height)
+
+### 12. Text가 Container안에서 render overflow를 발생시키는 에러
+
+- 해결: Container를 Flexible로 감싸주고 해당 Text도 Flexible로 감싸준다.
+  - [도움](https://stackoverflow.com/questions/53910087/wrap-text-in-container-without-using-a-fixed-width-in-flutter)
